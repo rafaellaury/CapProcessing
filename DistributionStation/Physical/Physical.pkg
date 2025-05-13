@@ -3,6 +3,5 @@
 <Physical xmlns="http://br-automation.co.at/AS/Physical">
   <Objects>
     <Object Type="Configuration" Description="Distribution station for the CapProcessing machine">DistributionStation</Object>
-    <Object Type="Configuration" Description="Distribution station for the CapProcessing machine">SortingStation</Object>
   </Objects>
 </Physical>

@@ -4,8 +4,8 @@
   <Objects>
     <Object Type="File" Description="Hardware configuration">Hardware.hw</Object>
     <Object Type="File" Description="Hardware topology">Hardware.hwl</Object>
-    <Object Type="Cpu" Description="Project to run a CapProcessing machine with two stations implemented as two separate configurations, communicating over OPCUA.">5PPC2100_BY44_000</Object>
-    <Object Type="File" Description="Image of processor">Hardware.jpg</Object>
+    <Object Type="Cpu" Description="Project implementing the sorting station of the cap processing machine">5PPC2100_BY44_000</Object>
+    <Object Type="File">Hardware.jpg</Object>
   </Objects>
   <Sources Download="false" IncludeUpgrades="true" Mode="ProjectTransfer" Option="Complete" />
 </Configuration>

@@ -7,7 +7,7 @@
     <Connector Name="IF3">
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
       <Parameter ID="ActivateDevice" Value="1" />
-      <Parameter ID="HostName" Value="capprocessing-sortingstation-ecamp" />
+      <Parameter ID="HostName" Value="distribution-station-ppc2100" />
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
     <Connector Name="IF4">
@@ -16,7 +16,6 @@
     <Connector Name="IF7">
       <Parameter ID="OperatingSystem" Value="ARemb" />
       <Parameter ID="ActivateDevice" Value="1" />
-      <Parameter ID="HostName" Value="sorting-station-internal" />
       <Parameter ID="Mode" Value="Manual" />
       <Parameter ID="InternetAddress" Value="192.169.0.10" />
       <Parameter ID="SubnetMask" Value="255.255.255.0" />
@@ -28,7 +27,7 @@
     <Connector Name="IF6">
       <Parameter ID="AssignedOperatingSystem" Value="GPOS" />
     </Connector>
-    <Parameter ID="ConfigurationID" Value="CapProcessing_SortingStation" />
+    <Parameter ID="ConfigurationID" Value="CapProcessing_DistributionStation" />
     <Parameter ID="ActivateHypervisor" Value="1" Description="Enabling B&amp;R Hypervisor" />
   </Module>
 </Hardware>

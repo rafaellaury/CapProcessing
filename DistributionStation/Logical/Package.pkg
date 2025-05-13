@@ -5,7 +5,8 @@
     <Object Type="File" Description="Global data types">Global.typ</Object>
     <Object Type="File" Description="Global variables">Global.var</Object>
     <Object Type="Package" Description="Global libraries">Libraries</Object>
-    <Object Type="Package" Description="Package with all files for SortingStation">SortingStation</Object>
-    <Object Type="Package" Description="Package with all files for DistributionStation">DistributionStation</Object>
+    <Object Type="Package">Source</Object>
+    <Object Type="Package">Infrastructure</Object>
+    <Object Type="Package">Documentation</Object>
   </Objects>
 </Package>
