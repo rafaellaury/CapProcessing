@@ -1,0 +1,10 @@
+VAR
+	CurrentState : INT;
+	Value : INT;
+	STart : BOOL;
+	Value1 : BOOL;
+	Value2 : BOOL;
+	TrstOP : BOOL;
+	cvf : BOOL;
+	test : BOOL;
+END_VAR

@@ -1,4 +1,4 @@
-PROGRAM _CYCLIC
+PROGRAM _INIT
 <?xml version="1.0"?>
 <?AutomationStudio FileVersion="4.9"?>
 <!-- Automation Studio Generated XML Section -->

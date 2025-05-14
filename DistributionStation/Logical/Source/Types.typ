@@ -1,30 +1,43 @@
 
 TYPE
-	IO_Type : 	STRUCT 
-		DIn : USINT;
-		DOut : USINT;
-		AIn : USINT;
-		AOut : USINT;
+	IO_Control : 	STRUCT 
+		DIn : DigitalInputsType;
+		DOut : DigitalOutputsType;
 	END_STRUCT;
-	DigitalInput : 	STRUCT 
+	DigitalInputsType : 	STRUCT 
 		EjectingCylinderExtended : BOOL;
 		EjectingCylinderRetracted : BOOL;
 		ProductGripped : BOOL;
 		SwivelDriveInMagazinePosition : BOOL;
 		SwivelDriveInConveyorPosition : BOOL;
 		MagazineEmpty : BOOL;
-		ConveyorProductOnStartingPosn : BOOL;
-		ConveyorProductOnUnloadingPosn : BOOL;
+		ProductAtStartingPosition : BOOL;
+		ProductAtUnloadingPosition : BOOL;
 	END_STRUCT;
-	DigitalOutput : 	STRUCT 
+	DigitalOutputsType : 	STRUCT 
 		EjectingCylinderPushOutProduct : BOOL;
 		VacuumOn : BOOL;
 		EjectionImpulseOn : BOOL;
 		SwivelDriveToMagazine : BOOL;
 		SwivelDriveToConveyor : BOOL;
 	END_STRUCT;
-	AnalogOutput : 	STRUCT 
+	AnalogInputsType : 	STRUCT 
 	END_STRUCT;
-	AnalogInput : 	STRUCT 
+	AnalogOutputsType : 	STRUCT 
+	END_STRUCT;
+	MacCtrl : 	STRUCT 
+		Mode : MachineModeType;
+		ManualCtrl : ManualControlType;
+	END_STRUCT;
+	MachineModeType : 	STRUCT 
+		ManualMode : BOOL;
+		AutoMode : BOOL;
+	END_STRUCT;
+	ManualControlType : 	STRUCT 
+		EjectCylPush : BOOL;
+		VacuumOn : BOOL;
+		EjectionImpulse : BOOL;
+		SwivelToConv : BOOL;
+		SwivelToMag : BOOL;
 	END_STRUCT;
 END_TYPE
