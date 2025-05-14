@@ -1,8 +1,7 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	Enable : BOOL;
+	SetCmd : BOOL;
+	DistrStn : IO_Control;
+	MachineControl : MacCtrl;
+	ManualControl : ManualControlType;
 END_VAR

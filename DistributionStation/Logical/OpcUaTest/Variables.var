@@ -1,3 +1,8 @@
 VAR
 	Test : USINT;
+	MC_BR_SelectMotorCurrent : MC_BR_SelectMotorCurrent_StpAx;
+	AxisType : McAxisType;
+	MpAxis_Base_0 : MpAxisBasic;
+	AxisPar : MpAxisBasicParType;
+	McStPAxRestorePosType_0 : McStpAxRestorePosType;
 END_VAR

@@ -1,4 +1,12 @@
-
 VAR_CONFIG
-
+	::DistrStn.DOut.EjectingCylinderPushOutProduct AT %QX."X20DO9322".DigitalOutput01;
+	::DistrStn.DOut.VacuumOn AT %QX."X20DO9322".DigitalOutput02;
+	::DistrStn.DOut.EjectionImpulseOn AT %QX."X20DO9322".DigitalOutput03;
+	::DistrStn.DOut.SwivelDriveToMagazine AT %QX."X20DO9322".DigitalOutput04;
+	::DistrStn.DOut.SwivelDriveToConveyor AT %QX."X20DO9322".DigitalOutput05;
+	::DistrStn.DIn.EjectingCylinderExtended AT %IX."X20DI9371".DigitalInput02;
+	::DistrStn.DIn.EjectingCylinderRetracted AT %IX."X20DI9371".DigitalInput03;
+	::DistrStn.DIn.ProductGripped AT %IX."X20DI9371".DigitalInput04;
+	::DistrStn.DIn.SwivelDriveInMagazinePosition AT %IX."X20DI9371".DigitalInput05;
+	::DistrStn.DIn.SwivelDriveInConveyorPosition AT %IX."X20DI9371".DigitalInput06;
 END_VAR

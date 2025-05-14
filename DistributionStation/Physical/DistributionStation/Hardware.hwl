@@ -2,7 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <BR.AS.HardwareTopology>
   <TimeStamps>
-    <TimeStamp LogicalPath="DistributionStation.Hardware.hw" LastWriteTime="05/13/2025 17:32:38" />
+    <TimeStamp LogicalPath="DistributionStation.Hardware.hw" LastWriteTime="05/14/2025 12:51:37" />
   </TimeStamps>
   <Modules>
     <Module Name="5AP1120.121E-000" Type="5AP1120.121E-000" X="-94" Y="90" />
@@ -27,8 +27,8 @@
     <Module Name="X20PS9400" Type="X20PS9400" X="180" Y="295" />
     <Module Name="X20TB12" Type="X20TB12" X="180" Y="322" />
     <Module Name="X20BC0083" Type="X20BC0083" X="155" Y="295" />
-    <Module Name="X67PS1300" Type="X67PS1300" X="270.3533" Y="467.440582" />
-    <Module Name="X67SM2436" Type="X67SM2436" X="484.736847" Y="492.2553" />
+    <Module Name="X67PS1300" Type="X67PS1300" X="270" Y="467" />
+    <Module Name="X67SM2436" Type="X67SM2436" X="484" Y="492" />
   </Modules>
   <Links>
     <Link From="5ACCIF01.FPLK-000" To="X20BC0083" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
