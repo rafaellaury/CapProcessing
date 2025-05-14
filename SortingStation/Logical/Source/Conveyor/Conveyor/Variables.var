@@ -1,0 +1,12 @@
+(*local function blocks*)
+VAR
+	MpAxisBasic_0 : MpAxisBasic; (*MpAxisBasic function block to control stepper motor*)
+END_VAR
+(*local structures*)
+VAR
+	MpAxisParameters_0 : MpAxisBasicParType; (*Parameter structure for the axis*)
+END_VAR
+(*local enumerators*)
+VAR
+	MotionControlState : MotionControlEnum := mcINIT; (*Enumerator to keep track of state machine status*)
+END_VAR

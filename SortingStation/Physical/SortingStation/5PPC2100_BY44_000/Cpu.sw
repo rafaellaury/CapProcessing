@@ -9,7 +9,7 @@
     <Task Name="OpcUaTest" Source="OpcUaTest.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Sorter" Source="Source.Sorter.Sorter.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="ManualMode" Source="Source.Manual.ManualMode.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="SortingCon" Source="Source.Conveyor.SortingConveyor.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Conveyor" Source="Source.Conveyor.Conveyor.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

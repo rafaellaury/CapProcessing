@@ -2,6 +2,8 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Program SubType="IEC" xmlns="http://br-automation.co.at/AS/Program">
   <Files>
+    <File Description="Conveyor interface types" Private="true">ConveyorIF.typ</File>
+    <File Description="Conveyor interface varaibles" Private="true">ConveyorIF.var</File>
     <File Description="Local data types" Private="true">Types.typ</File>
     <File Description="Local variables" Private="true">Variables.var</File>
     <File Description="Cyclic code">Cyclic.ld</File>

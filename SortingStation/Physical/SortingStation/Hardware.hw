@@ -147,15 +147,15 @@
     <Parameter ID="OutputIsReadOnly" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="0" />
     <Parameter ID="Output" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="1" />
     <Parameter ID="ReferenceDistanceIsReadOnly" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="0" />
-    <Parameter ID="ReferenceDistance" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="360" />
+    <Parameter ID="ReferenceDistance" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="1" />
     <Parameter ID="SteppingAngle" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Motor" Value="1.8" />
     <Parameter ID="EncoderLink" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis" Value="NoEncoder" />
     <Parameter ID="ModeIsReadOnly" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller" Value="0" />
     <Parameter ID="Mode" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller" Value="CurrentController" />
-    <Parameter ID="StandstillCurrent" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0.09" />
-    <Parameter ID="ConstantSpeedCurrent" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0.45" />
-    <Parameter ID="SpeedChangeCurrent" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0.9" />
-    <Parameter ID="FullStepThreshold" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0.0" />
+    <Parameter ID="StandstillCurrent" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0.1" />
+    <Parameter ID="ConstantSpeedCurrent" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0.1" />
+    <Parameter ID="SpeedChangeCurrent" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0.5" />
+    <Parameter ID="FullStepThreshold" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="0" />
     <Parameter ID="MotorSettlingTime" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="1" />
     <Parameter ID="DelayedCurrentSwitchOff" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Current" Value="1" />
     <Parameter ID="Mode" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/Homing" Value="Direct" />
@@ -166,9 +166,7 @@
     <Parameter ID="DriveError" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/StopReaction" Value="DecelerationLimit" />
     <Parameter ID="PositionError" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="1.0" />
     <Parameter ID="StallDetectionConfiguration" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="NotUsed" />
-    <Parameter ID="JerkFilter" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis" Value="Used" />
-    <Parameter ID="MaxJerkTime" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/JerkFilter" Value="2.0" />
-    <Parameter ID="JerkTime" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/JerkFilter" Value="0.002" />
+    <Parameter ID="JerkFilter" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis" Value="NotUsed" />
     <Parameter ID="ZeroVibrationFilter" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis" Value="NotUsed" />
     <Parameter ID="Source" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/DigitalInputs/HomingSwitch" Value="NotUsed" />
     <Parameter ID="Level" Location="FunctionModel/DriveConfiguration/Channel[1]/RealAxis/DigitalInputs/HomingSwitch" Value="High" />
