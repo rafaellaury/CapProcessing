@@ -1,4 +1,4 @@
-(*Sorter Interface variables*)
+(*global sorter interface variables*)
 VAR
 	SorterControl : SorterType; (*Control structure for the Sorter*)
 END_VAR

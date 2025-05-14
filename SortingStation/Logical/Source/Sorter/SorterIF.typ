@@ -1,4 +1,4 @@
-(*Sorter interface types*)
+(*global sorter interface types*)
 
 TYPE
 	SorterCommandType : 	STRUCT  (*Commands to pass to the sorter*)
@@ -32,7 +32,7 @@ TYPE
 	END_STRUCT;
 END_TYPE
 
-(*Global enums*)
+(*global sorter enums*)
 
 TYPE
 	ProductTypeEnum : 
