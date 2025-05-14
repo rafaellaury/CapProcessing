@@ -2,12 +2,64 @@
 <?AutomationStudio FileVersion="4.9"?>
 <BR.AS.HardwareTopology>
   <TimeStamps>
-    <TimeStamp LogicalPath="SortingStation.Hardware.hw" LastWriteTime="05/13/2025 09:40:49" />
+    <TimeStamp LogicalPath="SortingStation.Hardware.hw" LastWriteTime="05/13/2025 14:40:38" />
   </TimeStamps>
   <Modules>
-    <Module Name="5AP1120.121E-000" Type="5AP1120.121E-000" X="-94.79999" Y="90" />
-    <Module Name="5PPC2100_BY44_000" Type="5PPC2100.BY44-000" X="100.000015" Y="100" />
+    <Module Name="5AP1120.121E-000" Type="5AP1120.121E-000" X="-94" Y="90" />
+    <Module Name="5PPC2100_BY44_000" Type="5PPC2100.BY44-000" X="100.8" Y="100" />
+    <Module Name="5ACCIF01.FPLK-000" Type="5ACCIF01.FPLK-000" X="105.8" Y="113" />
+    <Module Name="X20BB80" Type="X20BB80" X="155" Y="295" />
+    <Module Name="X20BM11" Type="X20BM11" X="193" Y="295" />
+    <Module Name="X20DI9371" Type="X20DI9371" X="193" Y="295" />
+    <Module Name="X20TB12a" Type="X20TB12" X="193" Y="322" />
+    <Module Name="X20BM11a" Type="X20BM11" X="206" Y="295" />
+    <Module Name="X20PD0012" Type="X20PD0012" X="206" Y="295" />
+    <Module Name="X20TB12b" Type="X20TB12" X="206" Y="322" />
+    <Module Name="X20BM11b" Type="X20BM11" X="219" Y="295" />
+    <Module Name="X20PD0011" Type="X20PD0011" X="219" Y="295" />
+    <Module Name="X20TB12c" Type="X20TB12" X="219" Y="322" />
+    <Module Name="X20BM11c" Type="X20BM11" X="232" Y="295" />
+    <Module Name="X20DO9322" Type="X20DO9322" X="232" Y="295" />
+    <Module Name="X20TB12d" Type="X20TB12" X="232" Y="322" />
+    <Module Name="X20BM11d" Type="X20BM11" X="245" Y="295" />
+    <Module Name="X20BT9100" Type="X20BT9100" X="245" Y="295" />
+    <Module Name="X20TB12e" Type="X20TB12" X="245" Y="322" />
+    <Module Name="X20PS9400" Type="X20PS9400" X="180" Y="295" />
+    <Module Name="X20TB12" Type="X20TB12" X="180" Y="322" />
+    <Module Name="X20BC0083" Type="X20BC0083" X="155" Y="295" />
+    <Module Name="X67PS1300" Type="X67PS1300" X="258" Y="444" />
+    <Module Name="X67SM2436" Type="X67SM2436" X="361" Y="444" />
   </Modules>
-  <Links />
+  <Links>
+    <Link From="5ACCIF01.FPLK-000" To="X20BC0083" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="146.8" Y="121" />
+      <Point X="146.8" Y="121" />
+      <Point X="156.8" Y="121" />
+      <Point X="165" Y="121" />
+      <Point X="165" Y="255" />
+      <Point X="145" Y="255" />
+      <Point X="145" Y="370.4" />
+      <Point X="154.799988" Y="370.4" />
+      <Point X="169.799988" Y="370.4" />
+      <Point X="169.799988" Y="370.4" />
+    </Link>
+    <Link From="X20BT9100" To="X67PS1300" FromPort="X2X1" ToPort="X2X1" IsRoutedByUser="False">
+      <Point X="252.799988" Y="339.4" />
+      <Point X="252.799988" Y="339.4" />
+      <Point X="259.8" Y="339.4" />
+      <Point X="268.8" Y="339.4" />
+      <Point X="268.8" Y="443.4" />
+      <Point X="268.8" Y="456.4" />
+      <Point X="268.8" Y="456.4" />
+    </Link>
+    <Link From="X67PS1300" To="X67SM2436" FromPort="X2X2" ToPort="X2X1" IsRoutedByUser="False">
+      <Point X="300.8" Y="456.4" />
+      <Point X="300.8" Y="456.4" />
+      <Point X="312.8" Y="456.4" />
+      <Point X="360.8" Y="456.4" />
+      <Point X="371.8" Y="456.4" />
+      <Point X="371.8" Y="456.4" />
+    </Link>
+  </Links>
   <InfoElements />
 </BR.AS.HardwareTopology>

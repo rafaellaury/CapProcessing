@@ -7,4 +7,10 @@
   <Motion RestartAcoposParameter="true" RestartInitParameter="true" />
   <Project StoreRuntimeInProject="false" />
   <Variables DefaultInitValue="0" DefaultRetain="false" DefaultVolatile="true" />
+  <TechnologyPackages>
+    <mapp Version="5.24.3" />
+    <mappCockpit Version="5.24.4" />
+    <mappMotion McDriveLog="5.24.1" Version="5.24.1" />
+    <mappView Version="5.24.4" />
+  </TechnologyPackages>
 </Project>

@@ -1,0 +1,37 @@
+(*structures*)
+VAR
+	ClientAxis : AxisClientType;
+	OpcuaServer : OpcUaServerStruct;
+	SessionConnectInfo_0 : UASessionConnectInfo;
+END_VAR
+(*function blocks*)
+VAR
+	UA_Connect_0 : UA_Connect;
+	UA_Disconnect_0 : UA_Disconnect;
+	UA_GetNamespaceIndex_0 : UA_GetNamespaceIndex;
+	UA_NodeGetReadHandleList_0 : UA_NodeGetHandleList;
+	UA_NodeReleaseReadHandleList_0 : UA_NodeReleaseHandleList;
+	UA_ReadList_0 : UA_ReadList;
+	UA_NodeReleaseWriteHandleList_0 : UA_NodeGetHandleList;
+	UA_NodeGetWriteHandleList_0 : UA_NodeReleaseHandleList;
+END_VAR
+(*enums*)
+VAR
+	OpcUaClientState : OpcUaClientEnum;
+END_VAR
+(*variables*)
+VAR
+	ReadNodeIDs : ARRAY[0..MAX_INDEX_NODELIST] OF UANodeID;
+	ReadNodeIDCount : UINT := 1;
+	ReadNodeHandles : ARRAY[0..MAX_INDEX_NODELIST] OF DWORD;
+	ReadNodeHdlCount : UINT := 1;
+	WriteNodeIDs : ARRAY[0..MAX_INDEX_NODELIST] OF UANodeID;
+	WriteNodeIDCount : UINT;
+	WriteNodeHandles : ARRAY[0..MAX_INDEX_NODELIST] OF DWORD;
+END_VAR
+(*Test variable*)
+VAR
+	ClientTest : USINT;
+	Connect : BOOL;
+	VariableReadList : ARRAY[0..63] OF STRING[255] := ['::ClientRead:ClientTest',63('')];
+END_VAR
