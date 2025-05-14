@@ -1,4 +1,13 @@
-
 VAR_CONFIG
-
+	::gSorterHardwareIO.DigitalInputs.diProdAvail AT %IX."X20DI9371".DigitalInput01; (*24 VDC, 0.1 to 25 ms switching delay, sink - Product available*)
+	::gSorterHardwareIO.DigitalInputs.diMetallic AT %IX."X20DI9371".DigitalInput02; (*24 VDC, 0.1 to 25 ms switching delay, sink - Product is metallic*)
+	::gSorterHardwareIO.DigitalInputs.diNotBlack AT %IX."X20DI9371".DigitalInput03; (*24 VDC, 0.1 to 25 ms switching delay, sink - Product is not black*)
+	::gSorterHardwareIO.DigitalInputs.diLaneFull AT %IX."X20DI9371".DigitalInput04; (*24 VDC, 0.1 to 25 ms switching delay, sink - Lane full*)
+	::gSorterHardwareIO.DigitalInputs.diSwitch1Retracted AT %IX."X20DI9371".DigitalInput05; (*24 VDC, 0.1 to 25 ms switching delay, sink - Switch 1 retracted*)
+	::gSorterHardwareIO.DigitalInputs.diSwitch1Extended AT %IX."X20DI9371".DigitalInput06; (*24 VDC, 0.1 to 25 ms switching delay, sink - Switch 1 extended*)
+	::gSorterHardwareIO.DigitalInputs.diSwitch2Retracted AT %IX."X20DI9371".DigitalInput07; (*24 VDC, 0.1 to 25 ms switching delay, sink - Switch 2 retracted*)
+	::gSorterHardwareIO.DigitalInputs.diSwitch2Extended AT %IX."X20DI9371".DigitalInput08; (*24 VDC, 0.1 to 25 ms switching delay, sink - Switch 2 extended*)
+	::gSorterHardwareIO.DigitalOutputs.doExtendSwitch1 AT %QX."X20DO9322".DigitalOutput02; (*24 VDC / 0.5 A, source - Extend switch 1*)
+	::gSorterHardwareIO.DigitalOutputs.doExtendSwitch2 AT %QX."X20DO9322".DigitalOutput03; (*24 VDC / 0.5 A, source - Extend switch 2*)
+	::gSorterHardwareIO.DigitalOutputs.doRetractStopper AT %QX."X20DO9322".DigitalOutput04; (*24 VDC / 0.5 A, source - Retract stopper*)
 END_VAR

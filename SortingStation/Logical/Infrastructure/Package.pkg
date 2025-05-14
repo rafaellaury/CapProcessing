@@ -3,7 +3,7 @@
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="Package" Description="Package for OPCUA communication">Comms</Object>
-    <Object Type="Package" Description="Package for MpRecipe system">Recipes</Object>
     <Object Type="Package" Description="Package for MpAlarmX system">Alarms</Object>
+    <Object Type="Package" Description="Package containing recipe implementation">Recipe</Object>
   </Objects>
 </Package>
