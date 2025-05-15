@@ -1,0 +1,3 @@
+VAR
+	ProductArriving : BOOL;
+END_VAR

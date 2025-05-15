@@ -1,0 +1,4 @@
+(*global interface variables*)
+VAR
+	ConveyorController : ConveyorType; (*Conveyor control structure*)
+END_VAR

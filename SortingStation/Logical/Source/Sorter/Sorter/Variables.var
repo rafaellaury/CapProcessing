@@ -1,0 +1,7 @@
+(*local variables*)
+VAR
+	Lane1 : BOOL; (*True if lane 1 is target*)
+	Lane2 : BOOL; (*True if lane 2 is target*)
+	Lane3 : BOOL; (*True if lane 3 is target*)
+	CheckLanes : BOOL; (*Variable to activate action*)
+END_VAR
