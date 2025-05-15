@@ -3,21 +3,133 @@ PROGRAM _CYCLIC
 <?AutomationStudio FileVersion="4.9"?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Powering on the axis" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.Start"/>
-			<function position="top" type="ADD"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
-			<empty/>
+			<contact type="closed" name="MpAxisBasic_0.Error"/>
+			<contact type="closed" name="MpAxisBasic_0.PowerOn"/>
+			<line/>
+			<coil type="set" name="MpAxisBasic_0.Power"/>
 		</row>
 		<row>
-			<analog type="input" name="MotionControlState"/>
-			<function position="middle" type="ADD"><input name="" extensible="true"/><output name="40"/></function>
-			<analog type="output" name="MotionControlState"/>
+			<contact type="open" name="ConveyorController.Cmd.JogBackward" or="true"/>
+			<empty or="true"/>
+			<contact type="open" name="MpAxisBasic_0.PowerOn"/>
+			<contact type="closed" name="MpAxisBasic_0.IsHomed"/>
+			<coil type="open" name="MpAxisBasic_0.Home"/>
 		</row>
 		<row>
-			<analog type="input" name="1"/>
-			<function position="bottom" type="ADD"><input name="" extensible="true"/></function>
+			<contact type="open" name="ConveyorController.Cmd.JogForward" or="true"/>
 			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="ConveyorController.Cmd.JogForward"/>
+			<contact type="closed" name="MpAxisBasic_0.Error"/>
+			<contact type="open" name="MpAxisBasic_0.PowerOn"/>
+			<contact type="open" name="MpAxisBasic_0.IsHomed"/>
+			<coil type="open" name="MpAxisBasic_0.JogPositive"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="ConveyorController.Cmd.JogBackward"/>
+			<contact type="closed" name="MpAxisBasic_0.Error"/>
+			<contact type="open" name="MpAxisBasic_0.PowerOn"/>
+			<contact type="open" name="MpAxisBasic_0.IsHomed"/>
+			<coil type="open" name="MpAxisBasic_0.JogNegative"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="ConveyorController.Cmd.Start"/>
+			<contact type="closed" name="MpAxisBasic_0.Error"/>
+			<contact type="open" name="MpAxisBasic_0.PowerOn"/>
+			<contact type="open" name="MpAxisBasic_0.IsHomed"/>
+			<coil type="open" name="MpAxisBasic_0.MoveVelocity"/>
+		</row>
+	</network>
+	<network label="" comment="" row="5" column="0" commented="0">
+		<row>
+			<contact type="open" name="ConveyorController.Cmd.Stop"/>
+			<contact type="closed" name="MpAxisBasic_0.Error"/>
+			<contact type="open" name="MpAxisBasic_0.PowerOn"/>
+			<contact type="open" name="MpAxisBasic_0.IsHomed"/>
+			<contact type="open" name="MpAxisBasic_0.MoveActive"/>
+			<contact type="closed" name="MpAxisBasic_0.Stopped"/>
+			<coil type="reset" name="MpAxisBasic_0.Power"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<coil type="reset" name="MpAxisBasic_0.MoveVelocity"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<coil type="reset" name="MpAxisBasic_0.JogPositive"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<coil type="reset" name="MpAxisBasic_0.JogNegative"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<coil type="reset" name="ConveyorController.Cmd.Start"/>
+		</row>
+	</network>
+	<network label="" comment="" row="5" column="0" commented="0">
+		<row>
+			<contact type="open" name="ConveyorController.Cmd.Reset"/>
+			<line/>
+			<line/>
+			<coil type="open" name="MpAxisBasic_0.ErrorReset"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="ConveyorController.Cmd.Start"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="ConveyorController.Cmd.Stop"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="ConveyorController.Cmd.JogForward"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="ConveyorController.Cmd.JogBackward"/>
 		</row>
 	</network>
 	<network label="" comment="" row="20" column="0" commented="0">
@@ -35,7 +147,7 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<empty/>
-			<empty/>
+			<contact type="address" name="gAxisSort"/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="MpLink" vardynamic="true"/><output name="Active"/></functionblock>
 			<empty/>
 		</row>
@@ -43,7 +155,7 @@ PROGRAM _CYCLIC
 			<line/>
 			<line/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="Enable"/><output name="Error"/></functionblock>
-			<empty/>
+			<analog type="output" name="ConveyorController.Status.Error"/>
 		</row>
 		<row>
 			<empty/>
@@ -65,13 +177,13 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<empty/>
-			<analog type="input" name="ConveyorController.Cmd.Start"/>
+			<empty/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="Power"/><output name="Velocity"/></functionblock>
 			<empty/>
 		</row>
 		<row>
 			<empty/>
-			<analog type="input" name="ConveyorController.Cmd.Home"/>
+			<empty/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="Home"/><output name="CommandBusy"/></functionblock>
 			<empty/>
 		</row>
@@ -109,7 +221,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="JogNegative"/><output name="MoveActive"/></functionblock>
-			<empty/>
+			<analog type="output" name="ConveyorController.Status.MoveActive"/>
 		</row>
 		<row>
 			<empty/>
@@ -144,5 +256,9 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
+
+
+
 
 

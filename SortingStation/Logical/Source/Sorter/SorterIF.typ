@@ -5,6 +5,9 @@ TYPE
 		ExtendSwitch1 : BOOL; (*Command to extend the first switch*)
 		ExtendSwitch2 : BOOL; (*Command to extend the second switch*)
 		RetractStopper : BOOL; (*Command to retract the stopper*)
+		Home : BOOL; (*Command to home sorter*)
+		Enable : BOOL; (*Command to enable Sorting machine*)
+		Reset : BOOL; (*Command to reset*)
 	END_STRUCT;
 	SortingRecipeType : 	STRUCT  (*Recipe type for lane allocation*)
 		Lane1ProductType : ProductTypeEnum; (*Lane 1 product type allocation*)
@@ -13,6 +16,17 @@ TYPE
 	END_STRUCT;
 	SorterParameterType : 	STRUCT  (*Parameters for the sorter*)
 		LaneAllocationRecipe : SortingRecipeType; (*Lane allocation recipe*)
+	END_STRUCT;
+	SorterStates : 	STRUCT 
+		Init : BOOL;
+		InitDone : BOOL;
+		Waiting : BOOL;
+		WaitingDone : BOOL;
+		Classifying : BOOL;
+		ClassifyingDone : BOOL;
+		SortingProduct : BOOL;
+		SortingProductDone : BOOL;
+		Error : BOOL;
 	END_STRUCT;
 	SorterStatusType : 	STRUCT  (*Status variables from the sorter*)
 		ProductAvailable : BOOL; (*Product is available at beginning of line*)
@@ -24,6 +38,9 @@ TYPE
 		Switch1Extended : BOOL; (*Switch 1 is extended (active)*)
 		Switch2Retracted : BOOL; (*Switch 2 is retracted (not active)*)
 		Switch2Extended : BOOL; (*Switch 2 is extended (active)*)
+		IsHomed : BOOL; (*True if all pneumatic valves in home position*)
+		ProcessDone : BOOL; (*Process done bit*)
+		SorterState : SorterStates;
 	END_STRUCT;
 	SorterType : 	STRUCT  (*Sorter custom type for interface*)
 		Cmd : SorterCommandType; (*Command structure for sorter*)

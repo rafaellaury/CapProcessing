@@ -10,7 +10,8 @@ PROGRAM _CYCLIC
 	ELSE
 		Test := Test + 1;
 	END_IF
-	 
+	
+	
 END_PROGRAM
 
 PROGRAM _EXIT
