@@ -8,6 +8,9 @@
     <Task Name="ManualMode" Source="Source.ManualMode.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="OpcUaTest" Source="OpcUaTest.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="AutoMode" Source="Source.AutoMode.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Alarms" Source="Source.Alarms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="ProductTra" Source="Source.ProductTracking.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="ConveyorCo" Source="Source.ConveyorControl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

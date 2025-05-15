@@ -25,9 +25,10 @@ TYPE
 	END_STRUCT;
 	AnalogOutputsType : 	STRUCT 
 	END_STRUCT;
-	MacCtrl : 	STRUCT 
+	MachnineCtrl : 	STRUCT 
 		Mode : MachineModeType;
 		ManualCtrl : ManualControlType;
+		Command : CommandType;
 	END_STRUCT;
 	MachineModeType : 	STRUCT 
 		ManualMode : BOOL;
@@ -39,5 +40,10 @@ TYPE
 		EjectionImpulse : BOOL;
 		SwivelToConv : BOOL;
 		SwivelToMag : BOOL;
+	END_STRUCT;
+	CommandType : 	STRUCT 
+		Start : BOOL;
+		Stop : BOOL;
+		Reset : BOOL;
 	END_STRUCT;
 END_TYPE

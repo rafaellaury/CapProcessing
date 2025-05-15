@@ -3,7 +3,7 @@ PROGRAM _CYCLIC
 <?AutomationStudio FileVersion="4.9"?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="1">
 		<row>
 			<contact type="open" name="ManualControl.EjectCylPush"/>
 			<contact type="closed" name="MachineControl.Mode.AutoMode"/>
@@ -11,7 +11,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="DistrStn.DOut.EjectingCylinderPushOutProduct"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="1">
 		<row>
 			<contact type="open" name="ManualControl.VacuumOn"/>
 			<contact type="closed" name="MachineControl.Mode.AutoMode"/>
@@ -19,7 +19,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="DistrStn.DOut.VacuumOn"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="1">
 		<row>
 			<contact type="open" name="ManualControl.EjectionImpulse"/>
 			<contact type="closed" name="MachineControl.Mode.AutoMode"/>
@@ -27,7 +27,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="DistrStn.DOut.EjectionImpulseOn"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="1">
 		<row>
 			<contact type="open" name="ManualControl.SwivelToMag"/>
 			<contact type="closed" name="MachineControl.Mode.AutoMode"/>
@@ -35,7 +35,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="DistrStn.DOut.SwivelDriveToMagazine"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="1">
 		<row>
 			<contact type="open" name="ManualControl.SwivelToConv"/>
 			<contact type="closed" name="MachineControl.Mode.AutoMode"/>
@@ -45,5 +45,6 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
