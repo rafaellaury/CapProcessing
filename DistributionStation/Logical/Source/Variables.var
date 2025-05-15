@@ -1,7 +1,5 @@
 VAR
-	Enable : BOOL;
-	SetCmd : BOOL;
 	DistrStn : IO_Control;
-	MachineControl : MacCtrl;
+	MachineControl : MachnineCtrl;
 	ManualControl : ManualControlType;
 END_VAR

@@ -6,5 +6,8 @@
     <Object Type="File" Description="Local variables">Variables.var</Object>
     <Object Type="Program" Language="IEC">ManualMode</Object>
     <Object Type="Program" Language="IEC">AutoMode</Object>
+    <Object Type="Program" Language="IEC">Alarms</Object>
+    <Object Type="Program" Language="IEC">ProductTracking</Object>
+    <Object Type="Program" Language="IEC">ConveyorControl</Object>
   </Objects>
 </Package>
