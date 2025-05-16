@@ -1,0 +1,4 @@
+(*global interface variables*)
+VAR
+	AutomaticController : AutomaticControlType; (*Control structure for Automatic*)
+END_VAR

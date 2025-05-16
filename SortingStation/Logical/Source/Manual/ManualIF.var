@@ -1,0 +1,4 @@
+(*global interface variables*)
+VAR
+	ManualControl : ManualControlType; (*Control structure for manual mode*)
+END_VAR

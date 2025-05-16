@@ -1,8 +1,14 @@
-(*Global Variables*)
+(*global variables*)
 VAR
-	gOperatingMode : gOperatingModeEnum; (*Mode of operation of the sorting station*)
+	gOperatingMode : gOperatingModeType; (*Mode of operation of the sorting station*)
 END_VAR
-(*Global interface for hardware connect*)
+(*global interface for hardware connect*)
 VAR
 	gSorterHardwareIO : gSorterHardwareIOType; (*Hardware object for the sorter*)
+END_VAR
+(*control buttons from main page*)
+VAR
+	gReset : BOOL; (*Reset/clear button*)
+	gStop : BOOL; (*Stop button*)
+	gStart : BOOL; (*Start button for the chosen operating mode*)
 END_VAR

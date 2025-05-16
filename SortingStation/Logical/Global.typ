@@ -1,14 +1,20 @@
-(*Global Enums*)
+(*global enums*)
 
 TYPE
+	gOperatingModeType : 	STRUCT  (*Type for tracking the mode'*)
+		AutoMode : BOOL; (*Automatic mode*)
+		ManualMode : BOOL; (*Manual mode*)
+		HomingMode : BOOL; (*Homing mode*)
+	END_STRUCT;
 	gOperatingModeEnum : 
 		( (*Global operating mode*)
-		AUTOMATIC,
-		MANUAL
+		AUTOMATIC := 1, (*Automatic running mode*)
+		MANUAL := 2, (*Manual operation mode*)
+		HOMING := 3 (*Homing mode*)
 		);
 END_TYPE
 
-(*Global types for sorter hardware*)
+(*global types for sorter hardware*)
 
 TYPE
 	gSorterDOType : 	STRUCT  (*Sorter digital output type*)

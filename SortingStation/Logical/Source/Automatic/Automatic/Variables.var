@@ -1,7 +1,3 @@
-(*local variables*)
-VAR
-	ProcessDone : BOOL; (*Variable to track when Automatic is done*)
-END_VAR
 (*local enum*)
 VAR
 	SortingStationState : AutomaticSortingEnum := asINACTIVE; (*Enumerator to track the state*)

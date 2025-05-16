@@ -61,7 +61,7 @@ PROGRAM _CYCLIC
 			<contact type="open" name="MpAxisBasic_0.IsHomed"/>
 			<contact type="open" name="MpAxisBasic_0.MoveActive"/>
 			<contact type="closed" name="MpAxisBasic_0.Stopped"/>
-			<coil type="reset" name="MpAxisBasic_0.Power"/>
+			<coil type="open" name="MpAxisBasic_0.Stop"/>
 		</row>
 		<row>
 			<empty/>
@@ -100,9 +100,23 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="ConveyorController.Cmd.Start"/>
 		</row>
 	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="ConveyorController.Cmd.Home"/>
+			<contact type="closed" name="MpAxisBasic_0.IsHomed"/>
+			<line/>
+			<coil type="open" name="MpAxisBasic_0.Home"/>
+		</row>
+	</network>
 	<network label="" comment="" row="5" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.Reset"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="ConveyorController.Cmd.Stop"/>
+		</row>
+		<row>
+			<empty or="true"/>
 			<line/>
 			<line/>
 			<coil type="open" name="MpAxisBasic_0.ErrorReset"/>
@@ -112,12 +126,6 @@ PROGRAM _CYCLIC
 			<line/>
 			<line/>
 			<coil type="reset" name="ConveyorController.Cmd.Start"/>
-		</row>
-		<row>
-			<empty or="true"/>
-			<line/>
-			<line/>
-			<coil type="reset" name="ConveyorController.Cmd.Stop"/>
 		</row>
 		<row>
 			<empty or="true"/>
@@ -256,6 +264,10 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
+
+
+
 
 
 
