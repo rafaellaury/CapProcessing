@@ -14,16 +14,17 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	
-	MpAxis_Base_0.MpLink := ADR(Conveyor);
+
+	AxisPar.Velocity := 600;
+	AxisPar.Acceleration := 3000;
+	AxisPar.Deceleration := 3000;
+	AxisPar.Direction := 0;
+	MpAxis_Base_0.MpLink := ADR(DistributionConvy);
 	MpAxis_Base_0.Parameters := ADR(AxisPar);
-
-
-	MC_BR_SelectMotorCurrent.Axis := ADR(Conveyor);
-	//MC_BR_SelectMotorCurrent.Enable:=1;
-	
-	
-	MC_BR_SelectMotorCurrent();
 	MpAxis_Base_0();
+	
+	
+	
 	
 END_PROGRAM
 

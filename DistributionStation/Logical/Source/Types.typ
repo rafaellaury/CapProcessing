@@ -29,6 +29,7 @@ TYPE
 		Mode : MachineModeType;
 		ManualCtrl : ManualControlType;
 		Command : CommandType;
+		Alarm : ARRAY[0..23]OF BOOL;
 	END_STRUCT;
 	MachineModeType : 	STRUCT 
 		ManualMode : BOOL;

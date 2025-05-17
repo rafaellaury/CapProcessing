@@ -1,3 +1,29 @@
 VAR
-	MachineState : ARRAY[0..11] OF INT;
+	Machine : MachineState;
+	Test1 : BOOL;
+	Test2 : BOOL;
+	Test3 : BOOL;
+	Test4 : BOOL;
+	Test5 : BOOL;
+	Test6 : BOOL;
+	Test7 : BOOL;
+	ONS : BOOL;
+	R_TRIG_0 : R_TRIG;
+	rd : BOOL;
+	bn : BOOL;
+	Test9 : BOOL;
+	TON_0 : TON;
+	R_TRIG_1 : R_TRIG;
+	R_TRIG_2 : R_TRIG;
+	R_TRIG_3 : R_TRIG;
+	TON_1 : TON;
+	TON_2 : TON;
+	VaccuumON : BOOL;
+	SvivleToMagazine : BOOL;
+	SvivleToConv : BOOL;
+	ProductMag : BOOL;
+	Ejection : BOOL;
+	TON_3 : TON;
+	TON_4 : TON;
+	TON_5 : TON;
 END_VAR

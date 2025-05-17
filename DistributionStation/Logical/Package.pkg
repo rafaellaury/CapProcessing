@@ -9,6 +9,6 @@
     <Object Type="Package">Infrastructure</Object>
     <Object Type="Package">Documentation</Object>
     <Object Type="Program" Language="IEC">OpcUaTest</Object>
-    <Object Type="Package">mappView</Object>
+    <Object Type="Package" Description="Mapp View HMI implementation">mappView</Object>
   </Objects>
 </Package>

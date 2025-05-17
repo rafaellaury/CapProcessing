@@ -9,4 +9,6 @@ VAR_CONFIG
 	::DistrStn.DIn.ProductGripped AT %IX."X20DI9371".DigitalInput04;
 	::DistrStn.DIn.SwivelDriveInMagazinePosition AT %IX."X20DI9371".DigitalInput05;
 	::DistrStn.DIn.SwivelDriveInConveyorPosition AT %IX."X20DI9371".DigitalInput06;
+	::DistrStn.DIn.ProductAtStartingPosition AT %IX."X67SM2436".StatusInput02;
+	::DistrStn.DIn.ProductAtUnloadingPosition AT %IX."X67SM2436".StatusInput03;
 END_VAR
