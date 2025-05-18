@@ -2,8 +2,8 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File" Description="Automatic interface types" Private="true">AutomaticIF.typ</Object>
-    <Object Type="File" Description="Automatic interface variables" Private="true">AutomaticIF.var</Object>
+    <Object Type="File" Description="Automatic interface types">AutomaticIF.typ</Object>
+    <Object Type="File" Description="Automatic interface variables">AutomaticIF.var</Object>
     <Object Type="Program" Language="IEC" Description="Automatic program">Automatic</Object>
   </Objects>
 </Package>

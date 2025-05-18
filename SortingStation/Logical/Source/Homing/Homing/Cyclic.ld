@@ -6,7 +6,7 @@ PROGRAM _CYCLIC
 	<network label="" comment="" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.HomingMode"/>
-			<contact type="open" name="gStart"/>
+			<line/>
 			<line/>
 			<coil type="open" name="HomingControl.Cmd.HomeStation"/>
 		</row>
@@ -35,6 +35,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

@@ -1,4 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="ContentMain" height="700" width="1120" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2">
-  <Widgets></Widgets>
+<Content id="ContentMain" height="700" width="1120" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxProductID" top="20" left="700" width="400" height="240" zIndex="0" text="Product Identification">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Label" id="LabelAvailProd" top="24" left="20" width="160" zIndex="0" text="Detected:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelAvailProd1" top="64" left="20" width="160" zIndex="1" text="Type:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelDestLane" top="104" left="20" width="160" zIndex="2" text="Destination Lane:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelRedAuto" top="64" left="100" zIndex="3" text="Red" backColor="rgba(255, 0, 0, 1)" textColor="rgba(255, 255, 255, 1)" textAlign="center" fontSize="16px" visible="false" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelBlackAuto" top="64" left="200" zIndex="4" text="Black" backColor="rgba(0, 0, 0, 1)" textColor="rgba(255, 255, 255, 1)" textAlign="center" fontSize="16px" visible="false" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelMetal" top="64" left="300" zIndex="5" text="Metal" backColor="rgba(128, 128, 128, 1)" textColor="rgba(255, 255, 255, 1)" textAlign="center" fontSize="16px" visible="false" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelIdentified" top="24" left="200" width="160" zIndex="6" text="Identified:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Image" id="ImageMoveActiveAuto" top="24" left="120" width="25" height="36" zIndex="7" image="Media/Images/circle-xxl.png" visible="false" />
+        <Widget xsi:type="widgets.brease.Image" id="ImageIdentified" top="24" left="300" width="25" height="36" zIndex="8" image="Media/Images/circle-xxl.png" visible="false" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputLaneNum" top="104" left="180" width="80" zIndex="9" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelDestLaneAuto" top="104" left="180" width="60" zIndex="10" text="Lane" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelLaneFullSensor" top="144" left="20" width="140" zIndex="11" text="Lane Full Sensor:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Image" id="ImageMoveActiveAuto1" top="144" left="180" width="25" height="36" zIndex="12" image="Media/Images/circle-xxl.png" visible="false" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxCount" top="280" left="700" width="400" height="200" zIndex="1" text="Product Count">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Label" id="LabelRedAuto1" top="24" left="20" width="100" height="56" zIndex="0" text="Red" backColor="rgba(255, 0, 0, 1)" textColor="rgba(255, 255, 255, 1)" textAlign="center top" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelBlackAuto1" top="24" left="150" width="100" height="56" zIndex="1" text="Black" backColor="rgba(0, 0, 0, 1)" textColor="rgba(255, 255, 255, 1)" textAlign="center top" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelMetal1" top="24" left="280" width="100" height="56" zIndex="2" text="Metal" backColor="rgba(128, 128, 128, 1)" textColor="rgba(255, 255, 255, 1)" textAlign="center top" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabellTotalCount" top="104" left="20" width="230" zIndex="3" text="Total Count:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputCountTotal" top="104" left="120" zIndex="4" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" textColor="rgba(128, 128, 128, 1)" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputCountRed" top="40" left="20" height="35" zIndex="5" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unitAlign="top" unitTextAlign="left" textColor="rgba(255, 255, 255, 1)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputCountBlack" top="40" left="150" height="35" zIndex="6" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unitAlign="top" unitTextAlign="left" textColor="rgba(255, 255, 255, 1)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputCountMetal" top="40" left="280" height="35" zIndex="7" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unitAlign="top" unitTextAlign="left" textColor="rgba(255, 255, 255, 1)" textAlign="center" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="320" left="20" width="400" height="360" zIndex="2" text="Product to Lane Configuration">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ListBox" id="ListBoxRecipe" top="24" left="20" width="240" height="116" zIndex="0" borderWidth="1px" backColor="rgba(255, 255, 255, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonLoad" top="24" left="280" zIndex="1" text="Load" style="Command" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonEdit" top="64" left="280" zIndex="2" text="Edit" style="Command" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonSave" top="104" left="280" zIndex="3" text="Save" style="Command" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelLane1Prod" top="184" left="20" width="240" zIndex="4" text="Lane 1:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelLane2" top="224" left="20" width="240" zIndex="5" text="Lane 2:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelLane3" top="264" left="20" width="240" zIndex="6" text="Lane 3:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputLane1" top="184" left="180" width="80" zIndex="7" backColor="rgba(255, 255, 255, 0)" textColor="rgba(128, 128, 128, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputLane2" top="224" left="180" width="80" zIndex="8" backColor="rgba(255, 255, 255, 0)" textColor="rgba(128, 128, 128, 1)" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputLane3" top="264" left="180" width="80" zIndex="9" backColor="rgba(255, 255, 255, 0)" textColor="rgba(128, 128, 128, 1)" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxOpMode" top="20" left="20" width="620" height="240" zIndex="3" text="Operation Mode">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ButtonBar" id="ButtonBarOperatingMode" top="4" left="20" width="440" height="80" zIndex="0">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonManualMode" top="20" left="20" width="120" height="40" zIndex="0" text="Manual" checkedTextColor="rgba(255, 255, 255, 1)" checkedImageColor="rgba(255, 255, 255, 1)" style="Operate" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonHomingMode" top="20" left="160" width="120" height="40" zIndex="1" text="Homing" checkedTextColor="rgba(255, 255, 255, 1)" style="Operate" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonAutoMode" top="20" left="300" width="120" height="40" zIndex="2" text="Automatic" checkedTextColor="rgba(255, 255, 255, 1)" style="Operate" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.Label" id="LabelActiveMode" top="104" left="20" width="440" zIndex="1" text="Active Mode:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputActiveMode" top="104" left="320" width="220" zIndex="2" textColor="rgba(128, 128, 128, 1)" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonStart" top="24" left="480" width="120" height="40" zIndex="3" text="Start" style="Command" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonStop" top="84" left="480" width="120" height="40" zIndex="4" text="Stop" style="Command" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonReset" top="144" left="480" width="120" height="40" zIndex="5" text="Reset" style="Command" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelActiveMode1" top="144" left="160" width="300" zIndex="6" text="Time in Automatic:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput1" top="144" left="300" width="160" zIndex="7" unit="{'metric':'SEC','imperial':'SEC','imperial-us':'SEC'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" unitFontSize="16px" visible="false" />
+      </Widgets>
+    </Widget>
+  </Widgets>
 </Content>

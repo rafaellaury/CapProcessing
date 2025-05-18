@@ -3,20 +3,32 @@ PROGRAM _CYCLIC
 <?AutomationStudio FileVersion="4.9"?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="" row="3" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
 			<contact type="closed" name="gOperatingMode.AutoMode"/>
+			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!SortingStationState &lt;&gt; asERROR"/></function>
+			<empty or="true"/>
 			<analog type="input" name="99"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="SortingStationState"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="ConveyorController.Cmd.Stop"/>
 		</row>
 	</network>
 	<network label="" comment="" row="6" column="0" commented="0">
@@ -24,7 +36,6 @@ PROGRAM _CYCLIC
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
 			<contact type="open" name="gOperatingMode.AutoMode"/>
-			<contact type="open" name="gStart"/>
 			<contact type="open" name="HomingControl.Status.StationHomed"/>
 			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -33,7 +44,6 @@ PROGRAM _CYCLIC
 		<row>
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!SortingStationState = asINACTIVE"/></function>
-			<empty/>
 			<empty or="true"/>
 			<empty or="true"/>
 			<analog type="input" name="1"/>
@@ -41,7 +51,6 @@ PROGRAM _CYCLIC
 			<analog type="output" name="SortingStationState"/>
 		</row>
 		<row>
-			<empty/>
 			<empty/>
 			<empty/>
 			<empty/>
@@ -53,7 +62,6 @@ PROGRAM _CYCLIC
 			<coil type="set" name="AutomaticController.Cmd.EnableTimer"/>
 		</row>
 		<row>
-			<empty/>
 			<empty/>
 			<empty/>
 			<empty/>
@@ -69,14 +77,12 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty/>
-			<empty/>
 			<empty or="true"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 			<empty/>
 		</row>
 		<row>
-			<empty/>
 			<empty/>
 			<empty/>
 			<empty/>
@@ -636,6 +642,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

@@ -10,4 +10,13 @@ VAR_CONFIG
 	::gSorterHardwareIO.DigitalOutputs.doExtendSwitch1 AT %QX."X20DO9322".DigitalOutput02; (*24 VDC / 0.5 A, source - Extend switch 1*)
 	::gSorterHardwareIO.DigitalOutputs.doExtendSwitch2 AT %QX."X20DO9322".DigitalOutput03; (*24 VDC / 0.5 A, source - Extend switch 2*)
 	::gSorterHardwareIO.DigitalOutputs.doRetractStopper AT %QX."X20DO9322".DigitalOutput04; (*24 VDC / 0.5 A, source - Retract stopper*)
+	::AlarmHandl:CommsErrors.PLK.FPLK_ModuleOk AT %IX."5ACCIF01.FPLK-000".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X20BC0083_ModuleOk AT %IX."X20BC0083".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X20PS9400_ModuleOk AT %IX."X20PS9400".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X20DI9371_ModuleOk AT %IX."X20DI9371".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X20PD0012_ModuleOk AT %IX."X20PD0012".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X20PD0011_ModuleOk AT %IX."X20PD0011".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X20DO9322_ModuleOk AT %IX."X20DO9322".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X20BT9100_ModuleOk AT %IX."X20BT9100".ModuleOk;
+	::AlarmHandl:CommsErrors.X2X.X67SM2436_ModuleOk AT %IX."X67SM2436".ModuleOk;
 END_VAR

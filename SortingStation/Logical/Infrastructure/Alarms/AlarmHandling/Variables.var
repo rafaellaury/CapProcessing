@@ -1,0 +1,9 @@
+(*local variables*)
+VAR
+	CommsErrors : ErrorTypeComms; (*Error structure for communications*)
+END_VAR
+(*local function blocks*)
+VAR
+	MpAlarmXCore_0 : MpAlarmXCore; (*MpAlarmXCore function block*)
+	MpAlarmXHistory_0 : MpAlarmXHistory; (*MpAlarmXHistory function block*)
+END_VAR

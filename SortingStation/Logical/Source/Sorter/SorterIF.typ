@@ -49,7 +49,8 @@ TYPE
 		ProductCountRed : UINT; (*Product counter for red products*)
 		ProductCountBlack : UINT; (*Product counter for black products*)
 		ProductCountMetal : UINT; (*Product counter for metal products*)
-		Errors : SorterErrors;
+		Errors : SorterErrors; (*Errors structure*)
+		DestLane : UINT := 0; (*Destination lane, 1 2 or 3*)
 	END_STRUCT;
 	SorterType : 	STRUCT  (*Sorter custom type for interface*)
 		Cmd : SorterCommandType; (*Command structure for sorter*)

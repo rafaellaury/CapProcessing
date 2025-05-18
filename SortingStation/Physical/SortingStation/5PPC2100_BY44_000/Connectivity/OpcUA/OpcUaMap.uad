@@ -9,8 +9,45 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="AutomaticController" RecursiveEnable="2" />
+        <Variable Name="ConveyorController" RecursiveEnable="2" />
+        <Variable Name="HomingControl" RecursiveEnable="2" />
+        <Variable Name="ManualControl" RecursiveEnable="2" />
+        <Variable Name="SorterControl" RecursiveEnable="2" />
+      </GlobalVariables>
       <Task Name="OpcUaTest">
         <Variable Name="Test" />
+      </Task>
+      <Task Name="HMIHelper">
+        <Variable Name="AutomaticMode" />
+        <Variable Name="HomingMode" />
+        <Variable Name="ManualMode" />
+        <Variable Name="ActiveMode" />
+        <Variable Name="ErrorMessageMainPage" />
+        <Variable Name="ResetMode" />
+        <Variable Name="StartMode" />
+        <Variable Name="StopMode" />
+        <Variable Name="ErrorMessageManualPage" />
+        <Variable Name="ProductBlack" />
+        <Variable Name="ProductMetal" />
+        <Variable Name="ProductRed" />
+        <Variable Name="RequiredSwitch" />
+        <Variable Name="AutoIdentifiedProduct" />
+        <Variable Name="RecipeItemLane1" />
+        <Variable Name="RecipeItemLane2" />
+        <Variable Name="RecipeItemLane3" />
+        <Variable Name="ManualEnable" />
+      </Task>
+      <Task Name="Conveyor">
+        <Variable Name="MotionControlState" />
+      </Task>
+      <Task Name="Recipe">
+        <Variable Name="selectedValue" />
+        <Variable Name="SaveRecipe" />
+        <Variable Name="RecipeList" />
+        <Variable Name="MpRecipeUI_0" RecursiveEnable="2" />
+        <Variable Name="MpRecipeUIConnect" RecursiveEnable="2" />
       </Task>
     </Module>
   </DefaultView>
