@@ -5,5 +5,6 @@
     <Object Type="Package" Description="Package for OPCUA communication">DistributionComms</Object>
     <Object Type="Package" Description="Package for MpAlarmX system">Alarms</Object>
     <Object Type="Package" Description="Package containing recipe implementation">Recipe</Object>
+    <Object Type="Package" Description="Package containing HMI helper code">HMIHelper</Object>
   </Objects>
 </Package>

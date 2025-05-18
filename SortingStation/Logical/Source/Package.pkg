@@ -4,6 +4,7 @@
   <Objects>
     <Object Type="Package" Description="Package for manual mode source code">Manual</Object>
     <Object Type="Package" Description="Package for automatic source code">Automatic</Object>
+    <Object Type="Package" Description="Package for homing mode">Homing</Object>
     <Object Type="Package" Description="Package for conveyor source code">Conveyor</Object>
     <Object Type="Package" Description="Package for sorter source code">Sorter</Object>
   </Objects>

@@ -8,8 +8,16 @@
     <Page refId="AlarmPage" />
   </Pages>
   <Navigations />
-  <BindingsSets />
-  <EventBindingsSets />
+  <BindingsSets>
+    <BindingsSet refId="ContentTop_binding" />
+    <BindingsSet refId="ContentMain_binding" />
+    <BindingsSet refId="ContentManual_binding" />
+    <BindingsSet refId="ContentLeft_binding" />
+  </BindingsSets>
+  <EventBindingsSets>
+    <EventBindingsSet refId="ContentManual_eventbinding" />
+    <EventBindingsSet refId="ContentMain_eventbinding" />
+  </EventBindingsSets>
   <Dialogs />
   <Contents>
     <Content refId="ContentMain" />

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="ContentManual_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ConveyorController.Status.MoveActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ImageMoveActive" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Cmd.JogConveyorBackward" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonForward1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Cmd.JogConveyorForward" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonForward" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Cmd.RetractStopper" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButtonStopper" attribute="value" />
+</Binding>
+
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:ErrorMessageManualPage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="TextOutputError" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Cmd.ExtendSwitch1" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleSwitch1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:SorterControl.Status.Switch1Retracted" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleSwitch2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:SorterControl.Status.Switch2Retracted" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleSwitch1" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:SorterControl.Status.ProductAvailable" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ImageMoveActive1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Status.ProductInActiveArea" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ImageMoveActive3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Status.ProductClassified" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ImageIdentified" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Status.DestinationLane" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutputLaneNum" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:ProductBlack" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="LabelBlack" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:ProductRed" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="LabelRed" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:ProductMetal" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="LabelMetal" attribute="visible" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:RequiredSwitch" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="TextOutputSwitch" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.Cmd.ExtendSwitch2" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleSwitch2" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

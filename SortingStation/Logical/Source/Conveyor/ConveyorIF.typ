@@ -12,20 +12,20 @@ TYPE
 	END_STRUCT;
 	ConveyorParameterType : 	STRUCT  (*Conveyor parameter structure type*)
 		Position : LREAL := 0.0; (*Initial parameter for the axis - position*)
-		Velocity : REAL := 600; (*Initial parameter for the axis - velocity*)
+		Velocity : REAL := 400; (*Initial parameter for the axis - velocity*)
 		Acceleration : REAL := 3000; (*Initial parameter for the axis - acceleration*)
 		Deceleration : REAL := 3000; (*Initial parameter for the axis - deceleration*)
 		HomingMode : McHomingModeEnum := mcHOMING_DEFAULT; (*Homing mode*)
+	END_STRUCT;
+	ConveyorType : 	STRUCT  (*Conveyor controller type*)
+		Cmd : ConveyorCommandType; (*Instance of command structure*)
+		Par : ConveyorParameterType; (*Instance of parameter structure*)
+		Status : ConveyorStatusType; (*Instance of status structure*)
 	END_STRUCT;
 	ConveyorStatusType : 	STRUCT  (*Conveyor status structure type*)
 		IsPowered : BOOL; (*True if powered*)
 		IsHomed : BOOL; (*Status variable true if it is homed*)
 		Error : BOOL; (*True if there is an error present*)
 		MoveActive : BOOL; (*Checking if move is active*)
-	END_STRUCT;
-	ConveyorType : 	STRUCT  (*Conveyor controller type*)
-		Cmd : ConveyorCommandType; (*Instance of command structure*)
-		Par : ConveyorParameterType; (*Instance of parameter structure*)
-		Status : ConveyorStatusType; (*Instance of status structure*)
 	END_STRUCT;
 END_TYPE

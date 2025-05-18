@@ -1,0 +1,6 @@
+VAR
+	NewFileName : STRING[255];
+	RenameRecipe : USINT;
+	NewRecipe : BOOL;
+	CreateRecipe : BOOL;
+END_VAR

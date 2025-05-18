@@ -10,7 +10,35 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="SorterControl.Status.Switch1Retracted"/>
+			<contact type="open" name="SorterControl.Status.Switch2Retracted"/>
+			<line/>
+			<coil type="set" name="SorterControl.Status.IsHomed"/>
+		</row>
+	</network>
+	<network label="" comment="" row="3" column="0" commented="0">
+		<row>
+			<contact type="open" name="SorterControl.Status.Switch1Extended"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterControl.Status.IsHomed"/>
+		</row>
+		<row>
+			<contact type="open" name="SorterControl.Status.Switch2Extended" or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<contact type="open" name="SorterControl.Cmd.RetractStopper" or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Cmd.Home"/>
 			<contact type="closed" name="SorterControl.Status.IsHomed"/>
@@ -18,7 +46,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Cmd.RetractStopper"/>
 		</row>
 		<row>
-			<empty/>
+			<contact type="open" name="SorterControl.Cmd.InternalHome" or="true"/>
 			<empty or="true"/>
 			<line/>
 			<coil type="reset" name="SorterControl.Cmd.ExtendSwitch1"/>
@@ -41,29 +69,20 @@ PROGRAM _CYCLIC
 			<line/>
 			<coil type="reset" name="SorterControl.Cmd.Home"/>
 		</row>
-	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
 		<row>
-			<contact type="open" name="SorterControl.Status.Switch1Retracted"/>
-			<contact type="open" name="SorterControl.Status.Switch2Retracted"/>
+			<empty/>
+			<empty or="true"/>
 			<line/>
-			<coil type="set" name="SorterControl.Status.IsHomed"/>
+			<coil type="reset" name="SorterControl.Cmd.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="8" column="0" commented="0">
+	<network label="" comment="" row="11" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Cmd.Reset"/>
 			<line/>
 			<line/>
 			<line/>
-			<coil type="reset" name="SorterControl.Cmd.Enable"/>
-		</row>
-		<row>
-			<empty or="true"/>
-			<line/>
-			<line/>
-			<line/>
-			<coil type="positive transition" name="SorterControl.Cmd.Home"/>
+			<coil type="open" name="SorterControl.Cmd.InternalHome"/>
 		</row>
 		<row>
 			<empty or="true"/>
@@ -105,14 +124,42 @@ PROGRAM _CYCLIC
 			<line/>
 			<coil type="reset" name="CheckLanes"/>
 		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterControl.Status.Errors.Error1"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterControl.Status.Errors.Error2"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterControl.Status.Errors.Error3"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterControl.Status.SorterState.Error"/>
+		</row>
 	</network>
-	<network label="" comment="" row="8" column="0" commented="0">
+	<network label="" comment="" row="10" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.Init"/>
 			<contact type="closed" name="SorterControl.Status.IsHomed"/>
 			<line/>
 			<line/>
-			<coil type="positive transition" name="SorterControl.Cmd.Home"/>
+			<coil type="open" name="SorterControl.Cmd.InternalHome"/>
 		</row>
 		<row>
 			<empty or="true"/>
@@ -161,6 +208,18 @@ PROGRAM _CYCLIC
 			<line/>
 			<coil type="set" name="SorterControl.Status.SorterState.InitDone"/>
 		</row>
+		<row>
+			<empty or="true"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<analog type="input" name="0"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40" ENO="true"/></function>
+			<analog type="output" name="SorterControl.Status.DestLane"/>
+			<empty/>
+		</row>
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
 		<row>
@@ -170,12 +229,24 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Status.SorterState.InitDone"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.Waiting"/>
 			<contact type="open" name="SorterControl.Status.ProductAvailable"/>
 			<line/>
 			<coil type="set" name="SorterControl.Status.SorterState.WaitingDone"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<contact type="open" name="SorterControl.Status.LaneFull"/>
+			<line/>
+			<coil type="set" name="SorterControl.Status.Errors.Error3"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<coil type="set" name="SorterControl.Status.SorterState.Error"/>
 		</row>
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
@@ -193,7 +264,7 @@ PROGRAM _CYCLIC
 4: METAL" row="7" column="0" commented="0">
 		<row>
 			<empty/>
-			<functionblock position="header" name="zzTON00000001" type="TON"/>
+			<functionblock position="header" name="zzTON00000004" type="TON"/>
 			<empty/>
 			<empty/>
 			<empty/>
@@ -266,6 +337,9 @@ PROGRAM _CYCLIC
 			<contact type="open" name="CheckLanes"/>
 			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<coil type="set" name="SorterControl.Status.SorterState.ClassifyingDone"/>
 		</row>
 		<row>
@@ -273,6 +347,8 @@ PROGRAM _CYCLIC
 			<empty or="true"/>
 			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="Lane1" or="true"/>
+			<contact type="open" name="Lane1"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
@@ -280,13 +356,17 @@ PROGRAM _CYCLIC
 			<empty or="true"/>
 			<function position="bottom" type="Compare!"><input name="&lt;!SorterControl.Status.ProductType = SorterControl.Par.LaneAllocationRecipe.Lane1ProductType"/></function>
 			<empty or="true"/>
-			<empty/>
+			<analog type="input" name="1"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SorterControl.Status.DestLane"/>
 		</row>
 		<row>
 			<empty/>
 			<empty or="true"/>
 			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<line or="true"/>
+			<contact type="open" name="Lane2"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
@@ -294,13 +374,17 @@ PROGRAM _CYCLIC
 			<empty or="true"/>
 			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="Lane2" or="true"/>
-			<empty/>
+			<analog type="input" name="2"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SorterControl.Status.DestLane"/>
 		</row>
 		<row>
 			<empty/>
 			<empty or="true"/>
 			<function position="bottom" type="Compare!"><input name="&lt;!SorterControl.Status.ProductType = SorterControl.Par.LaneAllocationRecipe.Lane2ProductType"/></function>
 			<empty or="true"/>
+			<contact type="open" name="Lane3"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
@@ -308,7 +392,9 @@ PROGRAM _CYCLIC
 			<empty or="true"/>
 			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<line or="true"/>
-			<empty/>
+			<analog type="input" name="3"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SorterControl.Status.DestLane"/>
 		</row>
 		<row>
 			<empty/>
@@ -316,11 +402,17 @@ PROGRAM _CYCLIC
 			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="Lane3"/>
 			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 		</row>
 		<row>
 			<empty/>
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!SorterControl.Status.ProductType = SorterControl.Par.LaneAllocationRecipe.Lane3ProductType"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
 			<empty/>
 			<empty/>
 		</row>
@@ -333,7 +425,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Status.SorterState.ClassifyingDone"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.SortingProduct"/>
 			<contact type="open" name="Lane1"/>
@@ -342,21 +434,9 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<empty or="true"/>
-			<empty or="true"/>
-			<line/>
-			<coil type="reset" name="SorterControl.Status.IsHomed"/>
-		</row>
-		<row>
-			<empty or="true"/>
 			<contact type="closed" name="Lane1"/>
 			<contact type="open" name="Lane2"/>
 			<coil type="set" name="SorterControl.Cmd.ExtendSwitch2"/>
-		</row>
-		<row>
-			<empty/>
-			<empty/>
-			<empty or="true"/>
-			<coil type="reset" name="SorterControl.Status.IsHomed"/>
 		</row>
 	</network>
 	<network label="" comment="" row="3" column="0" commented="0">
@@ -369,8 +449,8 @@ PROGRAM _CYCLIC
 		<row>
 			<empty or="true"/>
 			<contact type="open" name="SorterControl.Status.Switch2Extended" or="true"/>
-			<line/>
-			<coil type="reset" name="SorterControl.Status.IsHomed"/>
+			<empty/>
+			<empty/>
 		</row>
 		<row>
 			<empty or="true"/>
@@ -405,31 +485,312 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Cmd.ExtendSwitch1"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="7" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.SortingProduct"/>
 			<contact type="open" name="SorterControl.Status.LaneFull"/>
 			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<coil type="set" name="SorterControl.Status.SorterState.SortingProductDone"/>
 		</row>
+		<row>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<functionblock position="header" name="zzTON00000002" type="TON"/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.LaneFull"/>
+			<line/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<coil type="set" name="SorterControl.Status.SorterState.Error"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<analog type="input" name="T#5s"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<empty or="true"/>
+			<coil type="set" name="SorterControl.Status.Errors.Error1"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<functionblock position="header" name="zzTON00000003" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<contact type="open" name="SorterControl.Status.ProductAvailable"/>
+			<line/>
+			<coil type="set" name="SorterControl.Status.SorterState.Error"/>
+		</row>
+		<row>
+			<empty/>
+			<analog type="input" name="T#1s"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<empty or="true"/>
+			<line/>
+			<coil type="set" name="SorterControl.Status.Errors.Error2"/>
+		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="2" column="0" commented="0">
 		<row>
 			<contact type="closed" name="SorterControl.Status.SorterState.SortingProduct"/>
 			<line/>
 			<line/>
 			<coil type="reset" name="SorterControl.Status.SorterState.SortingProductDone"/>
 		</row>
-	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
 		<row>
+			<empty or="true"/>
+			<actionblock position="topbottom"><input qualifier="N"/><output name="CountProducts"/></actionblock>
+			<empty/>
+		</row>
+	</network>
+	<network label="ane" comment="" row="11" column="0" commented="0">
+		<row>
+			<empty/>
+			<empty/>
+			<functionblock position="header" name="zzTON00000001" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<contact type="open" name="gOperatingMode.ManualMode"/>
+			<contact type="open" name="ManualControl.Cmd.ClassifyProduct"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<contact type="open" name="SorterControl.Status.ProductMetallic"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<line/>
+			<coil type="set" name="CheckLanes"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<analog type="input" name="T#300ms"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<empty or="true"/>
+			<analog type="input" name="4"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SorterControl.Status.ProductType"/>
+			<empty/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.ProductMetallic"/>
+			<contact type="open" name="SorterControl.Status.ProductNotBlack"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<coil type="set" name="CheckLanes"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<analog type="input" name="2"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SorterControl.Status.ProductType"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.ProductNotBlack"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<coil type="set" name="CheckLanes"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="3"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SorterControl.Status.ProductType"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<contact type="open" name="ManualControl.Status.ProductClassified"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="CheckLanes"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Lane1"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Lane2"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Lane3"/>
+		</row>
+	</network>
+	<network label="" comment="" row="9" column="0" commented="0">
+		<row>
+			<contact type="open" name="gOperatingMode.ManualMode"/>
+			<contact type="open" name="CheckLanes"/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="set" name="ManualControl.Status.ProductClassified"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
+			<analog type="output" name="Lane1" or="true"/>
+			<contact type="open" name="Lane1"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<function position="bottom" type="Compare!"><input name="&lt;!SorterControl.Status.ProductType = SorterControl.Par.LaneAllocationRecipe.Lane1ProductType"/></function>
+			<empty or="true"/>
+			<analog type="input" name="1"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="ManualControl.Status.DestinationLane"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<line or="true"/>
+			<contact type="open" name="Lane2"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
+			<analog type="output" name="Lane2" or="true"/>
+			<analog type="input" name="2"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="ManualControl.Status.DestinationLane"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<function position="bottom" type="Compare!"><input name="&lt;!SorterControl.Status.ProductType = SorterControl.Par.LaneAllocationRecipe.Lane2ProductType"/></function>
+			<empty or="true"/>
+			<contact type="open" name="Lane3"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<line or="true"/>
+			<analog type="input" name="3"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="ManualControl.Status.DestinationLane"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
+			<analog type="output" name="Lane3"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!SorterControl.Status.ProductType = SorterControl.Par.LaneAllocationRecipe.Lane3ProductType"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="2" column="0" commented="0">
+		<row>
+			<contact type="open" name="gOperatingMode.AutoMode"/>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="WriteDOAction"/></actionblock>
+			<empty/>
+		</row>
+		<row>
+			<contact type="open" name="gOperatingMode.HomingMode" or="true"/>
+			<empty/>
 			<empty/>
 			<empty/>
 		</row>
 	</network>
 </networks>
 END_PROGRAM
+
+
+
+
+
+
+
+
 
 
 

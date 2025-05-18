@@ -1,0 +1,4 @@
+(*global interface variables*)
+VAR
+	HomingControl : HomingControlType; (*Homing controller*)
+END_VAR

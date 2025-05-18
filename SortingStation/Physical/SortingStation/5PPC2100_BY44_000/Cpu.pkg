@@ -7,15 +7,15 @@
     <Object Type="File" Description="I/O mapping">IoMap.iom</Object>
     <Object Type="File" Description="Variable mapping">PvMap.vvm</Object>
     <Object Type="Package" Description="Connectivity package">Connectivity</Object>
-    <Object Type="Package">TextSystem</Object>
-    <Object Type="Package">UnitSystem</Object>
-    <Object Type="Package">AccessAndSecurity</Object>
-    <Object Type="Package">mappControl</Object>
+    <Object Type="Package" Description="Text system configuration (NOT USED)">TextSystem</Object>
+    <Object Type="Package" Description="Unit system configuration (Units defined directly in mapp View)">UnitSystem</Object>
+    <Object Type="Package" Description="Acceess and security configuration (NOT USED)">AccessAndSecurity</Object>
+    <Object Type="Package" Description="Mapp Control package (NOT USED)">mappControl</Object>
     <Object Type="Package" Description="Mapp Motion package">mappMotion</Object>
     <Object Type="Package" Description="Mapp Services package">mappServices</Object>
     <Object Type="Package" Description="Mapp View package">mappView</Object>
-    <Object Type="Package">mappVision</Object>
-    <Object Type="Package">mappCockpit</Object>
+    <Object Type="Package" Description="Mapp Vision package (NOT USED)">mappVision</Object>
+    <Object Type="Package" Description="Mapp Cockpit package">mappCockpit</Object>
   </Objects>
   <Configuration ModuleId="5PPC2100.BY44-000">
     <AutomationRuntime Version="I4.83" />

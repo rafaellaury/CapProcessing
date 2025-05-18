@@ -2,6 +2,8 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package SubType="mappServices" PackageType="mappServices" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File" Description="MpRecipeXml configuration">Config.mprecipexml</Object>
+    <Object Type="File" Description="MpAlarmXCore package">SortAlaCor.mpalarmxcore</Object>
+    <Object Type="File" Description="MpAlarmXHistory package">SortAlaHis.mpalarmxhistory</Object>
+    <Object Type="File" Description="MpRecipeXml package">SortRecipe.mprecipexml</Object>
   </Objects>
 </Package>

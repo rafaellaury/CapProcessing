@@ -5,8 +5,8 @@ TYPE
 		ExtendSwitch1 : BOOL; (*Command to extend the first switch*)
 		ExtendSwitch2 : BOOL; (*Command to extend the second switch*)
 		RetractStopper : BOOL; (*Command to retract the stopper*)
+		InternalHome : BOOL; (*Separate command to home internally*)
 		Home : BOOL; (*Command to home sorter*)
-		Enable : BOOL; (*Command to enable Sorting machine*)
 		Reset : BOOL; (*Command to reset*)
 	END_STRUCT;
 	SortingRecipeType : 	STRUCT  (*Recipe type for lane allocation*)
@@ -17,16 +17,21 @@ TYPE
 	SorterParameterType : 	STRUCT  (*Parameters for the sorter*)
 		LaneAllocationRecipe : SortingRecipeType; (*Lane allocation recipe*)
 	END_STRUCT;
-	SorterStates : 	STRUCT 
-		Init : BOOL;
-		InitDone : BOOL;
-		Waiting : BOOL;
-		WaitingDone : BOOL;
-		Classifying : BOOL;
-		ClassifyingDone : BOOL;
-		SortingProduct : BOOL;
-		SortingProductDone : BOOL;
-		Error : BOOL;
+	SorterErrors : 	STRUCT  (*Structure for the process errors of the sorter*)
+		Error1 : BOOL; (*ERROR 1 = Cap not sorted, stuck on conveyor or ejected. Please check machine*)
+		Error2 : BOOL; (*ERROR 2 = Cap stuck behind stopped*)
+		Error3 : BOOL; (*ERROR 3 = One of the lanes is full*)
+	END_STRUCT;
+	SorterStates : 	STRUCT  (*Local state machine tracker*)
+		Init : BOOL; (*Initial state*)
+		InitDone : BOOL; (*Initial done bit*)
+		Waiting : BOOL; (*Waiting state*)
+		WaitingDone : BOOL; (*Waiting done bit*)
+		Classifying : BOOL; (*Classifying state*)
+		ClassifyingDone : BOOL; (*Classifying done bit*)
+		SortingProduct : BOOL; (*Sorting state*)
+		SortingProductDone : BOOL; (*Sorting done bit*)
+		Error : BOOL; (*Error state*)
 	END_STRUCT;
 	SorterStatusType : 	STRUCT  (*Status variables from the sorter*)
 		ProductAvailable : BOOL; (*Product is available at beginning of line*)
@@ -40,7 +45,12 @@ TYPE
 		Switch2Extended : BOOL; (*Switch 2 is extended (active)*)
 		IsHomed : BOOL; (*True if all pneumatic valves in home position*)
 		ProcessDone : BOOL; (*Process done bit*)
-		SorterState : SorterStates;
+		SorterState : SorterStates; (*State machine local*)
+		ProductCountRed : UINT; (*Product counter for red products*)
+		ProductCountBlack : UINT; (*Product counter for black products*)
+		ProductCountMetal : UINT; (*Product counter for metal products*)
+		Errors : SorterErrors; (*Errors structure*)
+		DestLane : UINT := 0; (*Destination lane, 1 2 or 3*)
 	END_STRUCT;
 	SorterType : 	STRUCT  (*Sorter custom type for interface*)
 		Cmd : SorterCommandType; (*Command structure for sorter*)
