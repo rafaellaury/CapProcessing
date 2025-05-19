@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="ContentMain" height="700" width="1120" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2">
-  <Widgets></Widgets>
+<Content id="ContentMain" height="700" width="1120" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="140" left="680" width="200" zIndex="0" text="Svivle to Conv O/P" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label2" top="180" left="680" width="160" zIndex="1" text="Eject Cylinder" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label3" top="220" left="680" width="220" zIndex="2" text="Svivle To Magazine" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label4" top="260" left="680" width="180" zIndex="3" text="VacuumON" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label5" top="300" left="680" width="140" zIndex="4" text="EjectionPulse" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
+  </Widgets>
 </Content>

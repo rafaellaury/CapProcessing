@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <vdef:Visualization id="distribution_station_vis" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
-	<StartPage pageRefId="MainPage" />
+  <StartPage pageRefId="MainPage" />
   <Pages>
     <Page refId="MainPage" />
     <Page refId="ManualPage" />
@@ -8,7 +8,10 @@
     <Page refId="AlarmPage" />
   </Pages>
   <Navigations />
-  <BindingsSets />
+  <BindingsSets>
+    <BindingsSet refId="ContentMain_binding" />
+    <BindingsSet refId="ContentAlarms_binding" />
+  </BindingsSets>
   <EventBindingsSets />
   <Dialogs />
   <Contents>

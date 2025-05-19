@@ -1,8 +1,15 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	DistributionMpAlarmX : MpAlarmXCore;
+	DistributionUIConnectCore : MpAlarmXListUIConnectType;
+	DistributionAlarmXUI : MpAlarmXListUI;
+	BtnA : BOOL;
+	AlarmA : STRING[80];
+	nnn : UDINT;
+	gh : UDINT;
+	btng : BOOL;
+	button : BOOL;
+	ik : UDINT;
+	fgt : BOOL;
+	ghy : DINT;
+	BtnC : BOOL;
 END_VAR

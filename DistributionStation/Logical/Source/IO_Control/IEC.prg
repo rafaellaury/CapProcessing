@@ -3,7 +3,5 @@
 <Program SubType="IEC" xmlns="http://br-automation.co.at/AS/Program">
   <Files>
     <File Description="Cyclic code">Cyclic.ld</File>
-    <File Description="Initialization code">Init.ld</File>
-    <File Description="Exit code">Exit.ld</File>
   </Files>
 </Program>

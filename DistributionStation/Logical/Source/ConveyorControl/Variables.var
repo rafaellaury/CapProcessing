@@ -1,8 +1,4 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	ConvAxis_Base : MpAxisBasic;
+	ConvAxis_Par : MpAxisBasicParType;
 END_VAR

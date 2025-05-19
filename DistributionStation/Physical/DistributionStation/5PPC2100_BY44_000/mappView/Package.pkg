@@ -4,5 +4,7 @@
   <Objects>
     <Object Type="File" Description="Mapp View configuration file">Config.mappviewcfg</Object>
     <Object Type="File" Description="Mapp View visualization config file">Visualizat.vis</Object>
+    <Object Type="File">ContentMain.binding</Object>
+    <Object Type="File">ContentAlarms.binding</Object>
   </Objects>
 </Package>

@@ -1,5 +1,6 @@
 VAR
-	DistrStn : IO_Control;
-	MachineControl : MachnineCtrl;
+	IO : IO_Control; (*IO Mapping*)
+	DistrStn : IO_Control; (*Internal Bits*)
+	MachineControl : MachnineCtrl := (Par:=(Velocity:=600,Acceleration:=3000,Decceleration:=3000));
 	ManualControl : ManualControlType;
 END_VAR
