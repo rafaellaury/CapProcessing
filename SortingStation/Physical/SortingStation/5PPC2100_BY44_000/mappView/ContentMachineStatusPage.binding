@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="ContentMachineStatusPage_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalOutputs.doExtendSwitch1" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageSW1Ext" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalOutputs.doExtendSwitch2" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageSW2Ext" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalOutputs.doRetractStopper" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageStopper" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diProdAvail" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageProdAvail" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diMetallic" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageMetallic" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diNotBlack" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageNotBlack" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diLaneFull" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageLaneFull" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diSwitch1Retracted" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageSW1Retr" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diSwitch1Extended" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageSW1ExtS" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diSwitch2Retracted" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageSW2Ret" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSorterHardwareIO.DigitalInputs.diSwitch2Extended" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="ImageSW2ExtS" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ConveyorController.Par.Velocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="NumericInput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ConveyorController.Par.Acceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="NumericInputAccelSort" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ConveyorController.Par.Deceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="NumericInputDecelInputSort" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ConveyorController.Par.Deceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="NumericOutputDecelSort" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ConveyorController.Par.Acceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="NumericOutputAccelSort" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ConveyorController.Par.Velocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMachineStatusPage" widgetRefId="NumericOutputVelocitySort" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

@@ -4,7 +4,44 @@
   <Element ID="MpLinkSORTING_gAlarmXCore" Type="mpalarmxcore">
     <Group ID="mapp.AlarmX.Core.Configuration">
       <Group ID="[0]">
-        <Property ID="Name" Value="AUTO: Product behind sensor" />
+        <Property ID="Name" Value="Sorting station not homed" />
+        <Property ID="Message" Value="Cannot start automtic mode, the machine needs to be homed first." />
+        <Property ID="Code" Value="1001" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="Automatic in Error state" />
+        <Property ID="Message" Value="The automatic flow has been stopped, error is present. Please clear error and then re-home machine." />
+        <Property ID="Code" Value="1002" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="Product stuck between stopper and lane" />
+        <Property ID="Message" Value="The product did not reach the lane, please remove the product and re-home the machine." />
+        <Property ID="Code" Value="2001" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="Product behind stopper" />
+        <Property ID="Message" Value="Either a second product has come up, or the product did not make it through the stopper after being identified. Please remove the product and rehome the machine." />
+        <Property ID="Code" Value="2002" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="Incorrect switch open" />
+        <Property ID="Message" Value="If a product is present, you cannot open the correct stopper until the right switch is open. Please see guidelines and try again." />
+        <Property ID="Code" Value="3001" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="PLK comms error" />
+        <Property ID="Message" Value="There was an error communicating over Powerlink. Please check PLK card and cable connection." />
+        <Property ID="Code" Value="4001" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="X2X comms error" />
+        <Property ID="Message" Value="There was an error communicating with one of the X20 or X67 modules. Please check connections." />
+        <Property ID="Code" Value="4002" />
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Name" Value="OPCUA comms error" />
+        <Property ID="Message" Value="There was an error in the OPCUA connection. Please check the parameters and re-attempt connection." />
       </Group>
     </Group>
   </Element>

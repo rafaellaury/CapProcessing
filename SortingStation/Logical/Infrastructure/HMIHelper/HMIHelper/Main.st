@@ -53,8 +53,7 @@ PROGRAM _CYCLIC
 	CASE OpModeState OF
 		omMANUAL:
 			
-			
-			
+					
 			IF ManualControl.Status.Error THEN
 				ErrorMessageManualPage := 'ERROR: Illegal movement, see guidelines';
 			ELSE
@@ -79,6 +78,10 @@ PROGRAM _CYCLIC
 			
 			
 		omHOMING:
+			HomingCheck.EnableAck := HomingCheck.ConveyorStopped AND HomingCheck.Switch1Retracted AND
+				HomingCheck.Switch2Retracted AND HomingCheck.StopperRetracted AND HomingCheck.ProductsRemoved;
+			
+		
     END_CASE
 	
 	//IF AutomaticController.Status.Errors.Error1 THEN

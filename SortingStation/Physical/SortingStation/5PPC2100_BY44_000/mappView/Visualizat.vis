@@ -13,12 +13,17 @@
     <BindingsSet refId="ContentMain_binding" />
     <BindingsSet refId="ContentManual_binding" />
     <BindingsSet refId="ContentLeft_binding" />
+    <BindingsSet refId="ContentAlarms_binding" />
+    <BindingsSet refId="ContentMachineStatusPage_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentManual_eventbinding" />
     <EventBindingsSet refId="ContentMain_eventbinding" />
+    <EventBindingsSet refId="ContentAlarms_eventbinding" />
   </EventBindingsSets>
-  <Dialogs />
+  <Dialogs>
+    <Dialog refId="HomingDialog" />
+  </Dialogs>
   <Contents>
     <Content refId="ContentMain" />
     <Content refId="ContentLeft" />
@@ -26,6 +31,7 @@
     <Content refId="ContentManual" />
     <Content refId="ContentMachineStatusPage" />
     <Content refId="ContentAlarms" />
+    <Content refId="HomingContent" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />

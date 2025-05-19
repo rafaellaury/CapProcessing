@@ -4,6 +4,7 @@ VAR
 END_VAR
 (*local function blocks*)
 VAR
+	MpAlarmXAcknowledgeAll_0 : MpAlarmXAcknowledgeAll; (*MpAlarmXAcknowledgeAll function block*)
 	MpAlarmXCore_0 : MpAlarmXCore; (*MpAlarmXCore function block*)
 	MpAlarmXHistory_0 : MpAlarmXHistory; (*MpAlarmXHistory function block*)
 END_VAR

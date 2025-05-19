@@ -35,5 +35,13 @@
         <Widget xsi:type="widgets.brease.Label" id="Label1" top="104" left="180" zIndex="14" text="Lane" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
       </Widgets>
     </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="320" left="460" width="400" height="300" zIndex="3" text="Manual Control Guidelines">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Label" id="LabelGuidelines" top="4" left="20" width="360" zIndex="0" text="1. Only one switch can be extended." textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelGuidelines1" top="44" left="20" width="360" height="56" zIndex="1" multiLine="true" text="2. If Destination Lane is Lane 1, you must extend Switch 1 before retracting the Stopper." wordWrap="true" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelGuidelines2" top="104" left="20" width="360" height="56" zIndex="2" multiLine="true" text="3. If Destination Lane is Lane 2, you must extend Switch 2 before retracting the Stopper." wordWrap="true" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelGuidelines3" top="164" left="20" width="360" height="56" zIndex="3" multiLine="true" text="4. If Destination Lane is Lane 3, both Switches should be retracted before retracting the stopper." wordWrap="true" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+      </Widgets>
+    </Widget>
   </Widgets>
 </Content>
