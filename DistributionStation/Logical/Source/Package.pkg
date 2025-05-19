@@ -4,10 +4,10 @@
   <Objects>
     <Object Type="File" Description="Local data types">Types.typ</Object>
     <Object Type="File" Description="Local variables">Variables.var</Object>
-    <Object Type="Program" Language="IEC">ManualMode</Object>
-    <Object Type="Program" Language="IEC">AutoMode</Object>
-    <Object Type="Program" Language="IEC">Alarms</Object>
+    <Object Type="Program" Language="IEC">IO_Control</Object>
+    <Object Type="Program" Language="IEC">MainControl</Object>
     <Object Type="Program" Language="IEC">ProductTracking</Object>
     <Object Type="Program" Language="IEC">ConveyorControl</Object>
+    <Object Type="Program" Language="IEC">Alarms</Object>
   </Objects>
 </Package>

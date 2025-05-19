@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="DistributionAlarmXCore" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="AlarmA" />
+        <Property ID="Message" Value="test Alarm" />
+        <Property ID="Code" Value="101" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

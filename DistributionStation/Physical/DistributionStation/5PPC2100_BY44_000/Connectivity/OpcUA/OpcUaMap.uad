@@ -9,8 +9,32 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
-      <Task Name="OpcUaTest">
-        <Variable Name="Test" />
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="IO">
+          <Variable Name="DIn">
+            <Variable Name="EjectingCylinderExtended" />
+            <Variable Name="EjectingCylinderRetracted" />
+            <Variable Name="ProductGripped" />
+            <Variable Name="SwivelDriveInMagazinePosition" />
+            <Variable Name="SwivelDriveInConveyorPosition" />
+            <Variable Name="MagazineEmpty" />
+            <Variable Name="ProductAtStartingPosition" />
+            <Variable Name="ProductAtUnloadingPosition" />
+          </Variable>
+          <Variable Name="DOut">
+            <Variable Name="EjectingCylinderPushOutProduct" />
+            <Variable Name="VacuumOn" />
+            <Variable Name="EjectionImpulseOn" />
+            <Variable Name="SwivelDriveToMagazine" />
+            <Variable Name="SwivelDriveToConveyor" />
+          </Variable>
+        </Variable>
+      </GlobalVariables>
+      <Task Name="OpcUaTest" />
+      <Task Name="Alarms">
+        <Variable Name="DistributionAlarmXUI" />
+        <Variable Name="DistributionMpAlarmX" />
+        <Variable Name="DistributionUIConnectCore" />
       </Task>
     </Module>
   </DefaultView>
