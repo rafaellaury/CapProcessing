@@ -19,4 +19,5 @@ VAR
 	ManualEnable : BOOL; (*Boolean to enable manual mode*)
 	RecipeItemLane2 : STRING[255]; (*String rep of color of lane*)
 	RecipeItemLane3 : STRING[255]; (*String rep of color of lane*)
+	HomingCheck : HomingType; (*Structure containing checks on homing*)
 END_VAR

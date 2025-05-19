@@ -3,5 +3,6 @@
 <Package SubType="Layouts" PackageType="Layouts" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="File" Description="Layout used for all main pages">MainLayout.layout</Object>
+    <Object Type="File" Description="Homing dialog layout">DialogLayout.layout</Object>
   </Objects>
 </Package>

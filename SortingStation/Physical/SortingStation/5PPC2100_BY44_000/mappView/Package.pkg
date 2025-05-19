@@ -10,5 +10,8 @@
     <Object Type="File">ContentManual.eventbinding</Object>
     <Object Type="File">ContentLeft.binding</Object>
     <Object Type="File">ContentMain.eventbinding</Object>
+    <Object Type="File">ContentAlarms.binding</Object>
+    <Object Type="File">ContentAlarms.eventbinding</Object>
+    <Object Type="File">ContentMachineStatusPage.binding</Object>
   </Objects>
 </Package>

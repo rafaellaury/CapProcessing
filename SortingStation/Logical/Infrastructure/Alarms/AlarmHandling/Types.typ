@@ -13,6 +13,7 @@ TYPE
 		X20DO9322_ModuleOk : BOOL; (*Digital output module communicating*)
 		X20BT9100_ModuleOk : BOOL; (*Bus transmitter communicating*)
 		X67SM2436_ModuleOk : BOOL; (*Stepper drive communicating*)
+		X2X_ModuleOk : BOOL; (*General ok bit for X2X bus*)
 	END_STRUCT;
 	ErrorTypeComms : 	STRUCT  (*Structure to capture all errors in comms and of modules*)
 		PLK : ErrorTypePLK; (*Powerlink errors*)

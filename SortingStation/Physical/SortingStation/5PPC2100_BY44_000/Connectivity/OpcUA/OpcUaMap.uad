@@ -15,6 +15,7 @@
         <Variable Name="HomingControl" RecursiveEnable="2" />
         <Variable Name="ManualControl" RecursiveEnable="2" />
         <Variable Name="SorterControl" RecursiveEnable="2" />
+        <Variable Name="gSorterHardwareIO" RecursiveEnable="2" />
       </GlobalVariables>
       <Task Name="OpcUaTest">
         <Variable Name="Test" />

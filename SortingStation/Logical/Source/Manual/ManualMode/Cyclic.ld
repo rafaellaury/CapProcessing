@@ -65,11 +65,16 @@ PROGRAM _CYCLIC
 			<coil type="open" name="gSorterHardwareIO.DigitalOutputs.doExtendSwitch2"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="10" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="ManualControl.Cmd.RetractStopper"/>
 			<contact type="closed" name="SorterControl.Status.ProductAvailable"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<line/>
 			<line/>
 			<line/>
@@ -97,23 +102,33 @@ PROGRAM _CYCLIC
 			<line/>
 			<line/>
 			<line/>
-			<contact type="closed" name="ManualControl.Status.ProductInActiveArea" or="true"/>
-			<empty/>
-			<empty/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line or="true"/>
+			<empty or="true"/>
+			<coil type="reset" name="ManualControl.Status.Error"/>
 		</row>
 		<row>
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!ManualControl.Status.DestinationLane = 1"/></function>
 			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="ManualControl.Cmd.RetractStopper"/>
 			<contact type="open" name="SorterControl.Status.Switch1Retracted"/>
-			<contact type="closed" name="SorterControl.Status.Switch2Extended"/>
+			<contact type="open" name="SorterControl.Status.Switch2Extended"/>
+			<line/>
+			<line/>
+			<line/>
 			<line/>
 			<line/>
 			<line or="true"/>
-			<empty/>
 			<empty/>
 			<empty/>
 		</row>
@@ -122,7 +137,13 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!ManualControl.Status.DestinationLane = 2"/></function>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
@@ -131,6 +152,50 @@ PROGRAM _CYCLIC
 			<contact type="open" name="SorterControl.Status.Switch2Retracted" or="true"/>
 			<empty/>
 			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!ManualControl.Status.DestinationLane = 3"/></function>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.Switch2Retracted"/>
+			<line/>
+			<coil type="set" name="ManualControl.Status.Error"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.Switch1Retracted"/>
+			<line or="true"/>
+			<empty/>
 			<empty/>
 		</row>
 		<row>
@@ -138,15 +203,90 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<function position="bottom" type="Compare!"><input name="&lt;!ManualControl.Status.DestinationLane = 3"/></function>
+			<empty or="true"/>
+			<empty or="true"/>
 			<empty/>
 			<empty/>
 			<empty/>
 			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.Switch2Extended"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line or="true"/>
 			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.Switch1Retracted"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line or="true"/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.Switch2Retracted"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line or="true"/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="SorterControl.Status.Switch1Extended"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line or="true"/>
 			<empty/>
 			<empty/>
 		</row>
@@ -169,6 +309,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 
