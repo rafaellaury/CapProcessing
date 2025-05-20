@@ -18,7 +18,7 @@
     <Object Type="Package" Description="Mapp Cockpit package">mappCockpit</Object>
   </Objects>
   <Configuration ModuleId="5PPC2100.BY44-000">
-    <AutomationRuntime Version="F4.73" />
+    <AutomationRuntime Version="I4.83" />
     <Build GccVersion="4.1.2" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Safety SafetyRelease="0.0" />

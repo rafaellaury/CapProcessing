@@ -57,23 +57,11 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:SorterControl.Status.LaneFull" attribute="value" />
 			<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="ImageMoveActiveAuto1" attribute="visible" />
 		</Binding>
-		<Binding mode="oneWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:AutomaticController.Status.ProductsTotal" attribute="value" />
-			<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountTotal" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:SorterControl.Status.ProductCountRed" attribute="value" />
-			<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountRed" attribute="value" />
-		</Binding>
+		
+		
 
-		<Binding mode="oneWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:SorterControl.Status.ProductCountBlack" attribute="value" />
-			<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountBlack" attribute="value" />
-		</Binding>
-		<Binding mode="oneWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:SorterControl.Status.ProductCountMetal" attribute="value" />
-			<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountMetal" attribute="value" />
-		</Binding>
+		
+		
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::Recipe:MpRecipeUIConnect.Recipe.List.SelectedIndex" attribute="value" />
 			<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="ListBoxRecipe" attribute="selectedIndex" />
@@ -121,13 +109,26 @@
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="TextOutput1" attribute="value" />
 </Binding>
 
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.HomingDone" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="ToggleButtonAutoMode" attribute="enable" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Recipe:selectedValue" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="ListBoxRecipe" attribute="selectedValue" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ProductCounter.ProductCountRed" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountRed" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ProductCounter.ProductCountBlack" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountBlack" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ProductCounter.ProductCountMetal" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountMetal" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:AutomaticGeneralInfo.ProductsTotal" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputCountTotal" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

@@ -108,10 +108,6 @@ PROGRAM _CYCLIC
 		omHOMING:
 			
 		
-				
-		
-			
-		
 	END_CASE
 		
 	

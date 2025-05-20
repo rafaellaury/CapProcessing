@@ -17,6 +17,8 @@
         <Variable Name="SorterControl" RecursiveEnable="2" />
         <Variable Name="gSorterHardwareIO" RecursiveEnable="2" />
         <Variable Name="OpcUaControl" RecursiveEnable="2" />
+        <Variable Name="AutomaticGeneralInfo" RecursiveEnable="2" />
+        <Variable Name="ProductCounter" RecursiveEnable="2" />
       </GlobalVariables>
       <Task Name="HMIHelper">
         <Variable Name="AutomaticMode" />

@@ -50,7 +50,7 @@
           <Widgets>
             <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonManualMode" top="20" left="20" width="120" height="40" zIndex="0" text="Manual" checkedTextColor="rgba(255, 255, 255, 1)" checkedImageColor="rgba(255, 255, 255, 1)" style="Operate" />
             <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonHomingMode" top="20" left="160" width="120" height="40" zIndex="1" text="Homing" checkedTextColor="rgba(255, 255, 255, 1)" style="Operate" />
-            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonAutoMode" top="20" left="300" width="120" height="40" zIndex="2" text="Automatic" checkedTextColor="rgba(255, 255, 255, 1)" enable="false" style="Operate" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonAutoMode" top="20" left="300" width="120" height="40" zIndex="2" text="Automatic" checkedTextColor="rgba(255, 255, 255, 1)" style="Operate" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.Label" id="LabelActiveMode" top="104" left="220" width="240" zIndex="1" text="Active Mode:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
