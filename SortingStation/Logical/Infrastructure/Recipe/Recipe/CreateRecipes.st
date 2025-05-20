@@ -32,16 +32,106 @@ ACTION CreateRecipes:
 				END_IF
 
 			END_IF
-		
+			
 		CREATE_1:	// Default recipe 
 			MpRecipeXml_0.ErrorReset 			:= FALSE;
 			
-			// Setting default values for DefaultRecipe.xml
+			// Setting default values for RBM.xml
 			SorterControl.Par.LaneAllocationRecipe.Lane1ProductType := ptRED;
 			SorterControl.Par.LaneAllocationRecipe.Lane2ProductType := ptBLACK;
 			SorterControl.Par.LaneAllocationRecipe.Lane3ProductType := ptMETAL;
 			
-			MpRecipeXml_0.FileName 				:= ADR(DEFAULT_RECIPE_FILENAME);
+			MpRecipeXml_0.FileName 				:= ADR(RECIPE_1_FILENAME);
+			MpRecipeXml_0.Save					:= TRUE;
+			RecipeCreateStep 					:= DONE_1;
+			
+		DONE_1:	// when CommandDone GoTo next step
+			IF(MpRecipeXml_0.CommandDone) THEN
+				RecipeCreateStep 			:= CREATE_2;
+				MpRecipeXml_0.Save			:= FALSE;
+			END_IF;
+			
+		CREATE_2:	// Default recipe 
+			MpRecipeXml_0.ErrorReset 			:= FALSE;
+			
+			// Setting default values for RMB.xml
+			SorterControl.Par.LaneAllocationRecipe.Lane1ProductType := ptRED;
+			SorterControl.Par.LaneAllocationRecipe.Lane2ProductType := ptMETAL;
+			SorterControl.Par.LaneAllocationRecipe.Lane3ProductType := ptBLACK;
+			
+			MpRecipeXml_0.FileName 				:= ADR(RECIPE_2_FILENAME);
+			MpRecipeXml_0.Save					:= TRUE;
+			RecipeCreateStep 					:= DONE_2;
+			
+		DONE_2:	// when CommandDone GoTo next step
+			IF(MpRecipeXml_0.CommandDone) THEN
+				RecipeCreateStep 			:= CREATE_3;
+				MpRecipeXml_0.Save			:= FALSE;
+			END_IF;
+			
+		CREATE_3:	// Default recipe 
+			MpRecipeXml_0.ErrorReset 			:= FALSE;
+			
+			// Setting default values for BRM.xml
+			SorterControl.Par.LaneAllocationRecipe.Lane1ProductType := ptBLACK;
+			SorterControl.Par.LaneAllocationRecipe.Lane2ProductType := ptRED;
+			SorterControl.Par.LaneAllocationRecipe.Lane3ProductType := ptMETAL;
+			
+			MpRecipeXml_0.FileName 				:= ADR(RECIPE_3_FILENAME);
+			MpRecipeXml_0.Save					:= TRUE;
+			RecipeCreateStep 					:= DONE_3;
+			
+		DONE_3:	// when CommandDone GoTo next step
+			IF(MpRecipeXml_0.CommandDone) THEN
+				RecipeCreateStep 			:= CREATE_4;
+				MpRecipeXml_0.Save			:= FALSE;
+			END_IF;
+			
+		CREATE_4:	// Default recipe 
+			MpRecipeXml_0.ErrorReset 			:= FALSE;
+			
+			// Setting default values for BMR.xml
+			SorterControl.Par.LaneAllocationRecipe.Lane1ProductType := ptBLACK;
+			SorterControl.Par.LaneAllocationRecipe.Lane2ProductType := ptMETAL;
+			SorterControl.Par.LaneAllocationRecipe.Lane3ProductType := ptRED;
+			
+			MpRecipeXml_0.FileName 				:= ADR(RECIPE_4_FILENAME);
+			MpRecipeXml_0.Save					:= TRUE;
+			RecipeCreateStep 					:= DONE_4;
+			
+		DONE_4:	// when CommandDone GoTo next step
+			IF(MpRecipeXml_0.CommandDone) THEN
+				RecipeCreateStep 			:= CREATE_5;
+				MpRecipeXml_0.Save			:= FALSE;
+			END_IF;
+			
+		CREATE_5:	// Default recipe 
+			MpRecipeXml_0.ErrorReset 			:= FALSE;
+			
+			// Setting default values for BMR.xml
+			SorterControl.Par.LaneAllocationRecipe.Lane1ProductType := ptMETAL;
+			SorterControl.Par.LaneAllocationRecipe.Lane2ProductType := ptRED;
+			SorterControl.Par.LaneAllocationRecipe.Lane3ProductType := ptBLACK;
+			
+			MpRecipeXml_0.FileName 				:= ADR(RECIPE_5_FILENAME);
+			MpRecipeXml_0.Save					:= TRUE;
+			RecipeCreateStep 					:= DONE_5;
+			
+		DONE_5:	// when CommandDone GoTo next step
+			IF(MpRecipeXml_0.CommandDone) THEN
+				RecipeCreateStep 			:= CREATE_6;
+				MpRecipeXml_0.Save			:= FALSE;
+			END_IF;
+		
+		CREATE_6:	// Default recipe 
+			MpRecipeXml_0.ErrorReset 			:= FALSE;
+			
+			// Setting default values for DefaultRecipe.xml
+			SorterControl.Par.LaneAllocationRecipe.Lane1ProductType := ptMETAL;
+			SorterControl.Par.LaneAllocationRecipe.Lane2ProductType := ptBLACK;
+			SorterControl.Par.LaneAllocationRecipe.Lane3ProductType := ptRED;
+			
+			MpRecipeXml_0.FileName 				:= ADR(RECIPE_6_FILENAME);
 			MpRecipeXml_0.Save					:= TRUE;
 			RecipeCreateStep 					:= REFRESH;
 			
@@ -57,10 +147,10 @@ ACTION CreateRecipes:
 			
 			IF(MpRecipeUIConnect.Status = mpRECIPE_UI_STATUS_IDLE)THEN
 				MpRecipeUIConnect.Recipe.Load 		:= TRUE;
-				RecipeCreateStep 					:= DONE_4;
+				RecipeCreateStep 					:= DONE_6;
 			END_IF
 			
-		DONE_4:	// if loading was successful the creation of the recipes is done
+		DONE_6:	// if loading was successful the creation of the recipes is done
 		
 			IF(MpRecipeUIConnect.Status = mpRECIPE_UI_STATUS_IDLE)THEN
 				RecipeCreateStep 					:= ALL_DONE;
@@ -69,25 +159,5 @@ ACTION CreateRecipes:
 			END_IF;		
 		
 	END_CASE;
-
-	(*
-	//Edit Recipe
-	IF DialogOpen THEN
-		
-		EditIngredients.Milk 				:= CoffeeIngredients.Milk;
-		EditIngredients.Water 				:= CoffeeIngredients.Water;
-		EditIngredients.Sugar 				:= CoffeeIngredients.Sugar;
-		EditIngredients.Coffee 				:= CoffeeIngredients.Coffee;
-		DialogOpen 							:= FALSE;
-	END_IF
-	
-	IF SaveRecipe THEN
-		
-		CoffeeIngredients.Milk 				:= EditIngredients.Milk;
-		CoffeeIngredients.Water 			:= EditIngredients.Water;
-		CoffeeIngredients.Sugar 			:= EditIngredients.Sugar;
-		CoffeeIngredients.Coffee 			:= EditIngredients.Coffee;
-	END_IF
-*)
 
 END_ACTION

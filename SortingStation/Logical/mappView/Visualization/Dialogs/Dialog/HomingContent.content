@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="HomingContent" height="600" width="800" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Widgets>
-    <Widget xsi:type="widgets.brease.CheckBox" id="CheckBox1" top="120" left="160" zIndex="0" text="CheckBox1" />
-    <Widget xsi:type="widgets.brease.CheckBox" id="CheckBox2" top="180" left="160" zIndex="1" text="CheckBox2" />
-  </Widgets>
-</Content>

@@ -3,7 +3,7 @@ PROGRAM _CYCLIC
 <?AutomationStudio FileVersion="4.9"?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="If manual mode is selected and a product is at the sensor, classify it" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="SorterControl.Status.ProductAvailable"/>
@@ -11,7 +11,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="ManualControl.Cmd.ClassifyProduct"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="Code block to set various bits once the product is classified" row="5" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="ManualControl.Status.ProductClassified"/>
@@ -51,7 +51,7 @@ PROGRAM _CYCLIC
 			<analog type="output" name="ManualControl.Status.DestinationLane"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Only extend the switches if the other switch is not extended" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="ManualControl.Cmd.ExtendSwitch1"/>
@@ -65,7 +65,12 @@ PROGRAM _CYCLIC
 			<coil type="open" name="gSorterHardwareIO.DigitalOutputs.doExtendSwitch2"/>
 		</row>
 	</network>
-	<network label="" comment="" row="10" column="0" commented="0">
+	<network label="" comment="Logic to prevent the stopper from being opened in illegal scenarios:
+First rung: If no product is there and the lanes are not full, then retract the stopper when the command is received
+Second rung: If there is a product and its destination lane is 1, only retract the stopper (if command received) when the correct switch is extended - switch 1 in this case
+Third rung: If there is a product and its destination lane is 1, only retract the stopper (if command received) when the correct switch is extended - switch 2 in this case
+Fourth rung: Second rung: If there is a product and its destination lane is 1, only retract the stopper (if command received) when no switches are extended
+Trigger an error in other cases" row="10" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="ManualControl.Cmd.RetractStopper"/>
@@ -291,7 +296,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Jog conveyor forward when command is received" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="ManualControl.Cmd.JogConveyorForward"/>
@@ -299,7 +304,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="ConveyorController.Cmd.JogForward"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Jog conveyor backward when command is received" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="ManualControl.Cmd.JogConveyorBackward"/>
@@ -309,6 +314,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

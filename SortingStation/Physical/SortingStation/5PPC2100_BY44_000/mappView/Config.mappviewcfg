@@ -13,7 +13,7 @@
         <Selector ID="InsecureMode" Value="1" />
       </Group>
       <Group ID="DiagnosticPageConf">
-        <Selector ID="DiagnosticPageSelection" Value="1" />
+        <Selector ID="DiagnosticPageSelection" Value="2" />
       </Group>
       <Selector ID="Deployment" Value="DeploymentPLC" />
     </Group>

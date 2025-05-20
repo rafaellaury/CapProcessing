@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="HomingContent_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.ConveyorStopped" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="CheckBoxSunctionOff1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.ProductsRemoved" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="CheckBoxDistProdRemove1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.StopperRetracted" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="CheckBoxDistConveyor1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.Switch1Retracted" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="CheckBoxDistConveyor6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.Switch2Retracted" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="CheckBoxDistConveyor7" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.EnableAck" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="MomentaryPushButtonAcknowledge" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.EnableAck" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="MomentaryPushButtonAcknowledge" attribute="visible" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HMIHelper:HomingCheck.HomingConfirm" attribute="value" />
+<Target xsi:type="brease" contentRefId="HomingContent" widgetRefId="MomentaryPushButtonAcknowledge" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

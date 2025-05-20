@@ -5,15 +5,45 @@
       <Widgets>
         <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxConveyorSorting1" top="24" left="20" width="480" height="196" zIndex="0" text="Conveyor Parameters" backColor="rgba(255, 255, 255, 1)">
           <Widgets>
-            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput4" top="24" left="160" width="120" zIndex="0" />
-            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputVelocitySort1" top="24" left="300" width="120" zIndex="1" unit="{'metric':'IU','imperial':'IU','imperial-us':'IU'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
-            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput5" top="64" left="160" width="120" zIndex="2" />
-            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputDistrDecel" top="104" left="160" width="120" zIndex="3" maxValue="5000" unit="{'metric':'IV','imperial':'IV','imperial-us':'IV'}" unitAlign="right" />
-            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputAccelSort1" top="64" left="300" width="120" zIndex="4" unit="{'metric':'IV','imperial':'IV','imperial-us':'IV'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
-            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDecelSort1" top="104" left="300" width="120" zIndex="5" unit="{'metric':'RPS','imperial':'RPS','imperial-us':'RPS'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput4" top="24" left="160" width="120" zIndex="0" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputVelocitySort1" top="24" left="300" width="120" zIndex="1" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput5" top="64" left="160" width="120" zIndex="2" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputDistrDecel" top="104" left="160" width="120" zIndex="3" maxValue="5000" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputAccelSort1" top="64" left="300" width="120" zIndex="4" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDecelSort1" top="104" left="300" width="120" zIndex="5" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
             <Widget xsi:type="widgets.brease.Label" id="SortVel1" top="24" left="20" width="180" zIndex="6" text="Velocity:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
             <Widget xsi:type="widgets.brease.Label" id="SortAccel1" top="64" left="20" width="120" zIndex="7" text="Acceleration:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
             <Widget xsi:type="widgets.brease.Label" id="SortDecel1" top="104" left="20" width="120" zIndex="8" text="Deceleration:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxDOSort1" top="244" left="20" width="230" height="156" zIndex="1" text="Digital Outputs" backColor="rgba(255, 255, 255, 1)">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.Label" id="LabelSW1" top="4" left="0" width="180" zIndex="0" text="Extend SW1 (DO2)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelSW3" top="44" left="0" width="180" zIndex="1" text="Extend SW2 (DO3)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelStopperRet1" top="84" left="0" width="180" zIndex="2" text="Retract Stopper (DO4)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageSW1" top="4" left="180" width="25" height="36" zIndex="3" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageSW2" top="44" left="180" width="25" height="36" zIndex="4" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageStopper1" top="84" left="180" width="25" height="36" zIndex="5" image="Media/Images/circle-xxl.png" visible="false" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxDISort1" top="244" left="280" width="230" height="356" zIndex="2" text="Digital Inputs" backColor="rgba(255, 255, 255, 1)">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.Label" id="LabelProdAvail1" top="4" left="10" width="180" zIndex="0" text="Product Avail (DI1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelProdMetal1" top="44" left="10" width="180" zIndex="1" text="Product Metallic (DI2)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageProdAvail1" top="4" left="190" width="25" height="36" zIndex="2" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageMetallic1" top="44" left="190" width="25" height="36" zIndex="3" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelProdNotBlack1" top="84" left="10" width="180" zIndex="4" text="Product Not Black (DI3)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageNotBlack1" top="84" left="190" width="25" height="36" zIndex="5" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelLaneFull1" top="124" left="10" width="180" zIndex="6" text="Lane Full (DI4)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageLaneFull1" top="124" left="190" width="25" height="36" zIndex="7" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelSW4" top="164" left="10" width="180" zIndex="8" text="SW1 Retracted (DI5)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelSW5" top="204" left="10" width="180" zIndex="9" text="SW1 Extended (DI6)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelSW6" top="244" left="10" width="180" zIndex="10" text="SW2 Retracted (DI7)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Label" id="LabelSW7" top="284" left="10" width="180" zIndex="11" text="SW2 Extended (DI8)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageSW3" top="164" left="190" width="25" height="36" zIndex="12" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageSW4" top="204" left="190" width="25" height="36" zIndex="13" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageSW5" top="244" left="190" width="25" height="36" zIndex="14" image="Media/Images/circle-xxl.png" visible="false" />
+            <Widget xsi:type="widgets.brease.Image" id="ImageSW6" top="284" left="190" width="25" height="36" zIndex="15" image="Media/Images/circle-xxl.png" visible="false" />
           </Widgets>
         </Widget>
       </Widgets>
@@ -22,12 +52,12 @@
       <Widgets>
         <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxConveyorSorting" top="24" left="20" width="480" height="196" zIndex="0" text="Conveyor Parameters" backColor="rgba(255, 255, 255, 1)">
           <Widgets>
-            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput1" top="24" left="160" width="140" zIndex="0" maxValue="1000" unit="{'metric':'IU','imperial':'IU','imperial-us':'IU'}" unitAlign="right" />
-            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputVelocitySort" top="24" left="320" width="140" zIndex="1" unit="{'metric':'IU','imperial':'IU','imperial-us':'IU'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
-            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputAccelSort" top="64" left="160" width="140" zIndex="2" maxValue="5000" unit="{'metric':'IV','imperial':'IV','imperial-us':'IV'}" unitAlign="right" />
-            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputDecelInputSort" top="104" left="160" width="140" zIndex="3" maxValue="5000" unit="{'metric':'IV','imperial':'IV','imperial-us':'IV'}" unitAlign="right" />
-            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputAccelSort" top="64" left="320" width="140" zIndex="4" unit="{'metric':'IV','imperial':'IV','imperial-us':'IV'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
-            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDecelSort" top="104" left="320" width="140" zIndex="5" unit="{'metric':'IV','imperial':'IV','imperial-us':'IV'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput1" top="24" left="160" width="140" zIndex="0" maxValue="1000" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputVelocitySort" top="24" left="320" width="140" zIndex="1" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputAccelSort" top="64" left="160" width="140" zIndex="2" maxValue="5000" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputDecelInputSort" top="104" left="160" width="140" zIndex="3" maxValue="5000" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputAccelSort" top="64" left="320" width="140" zIndex="4" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDecelSort" top="104" left="320" width="140" zIndex="5" unit="{'metric':'M41','imperial':'IV','imperial-us':'IV'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" />
             <Widget xsi:type="widgets.brease.Label" id="SortVel" top="24" left="20" width="180" zIndex="6" text="Velocity:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
             <Widget xsi:type="widgets.brease.Label" id="SortAccel" top="64" left="20" width="120" zIndex="7" text="Acceleration:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
             <Widget xsi:type="widgets.brease.Label" id="SortDecel" top="104" left="20" width="120" zIndex="8" text="Deceleration:" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />

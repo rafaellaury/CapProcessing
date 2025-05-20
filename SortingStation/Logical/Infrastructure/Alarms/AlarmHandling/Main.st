@@ -14,6 +14,10 @@ PROGRAM _INIT
 	// Enabling MpAlarmXHistory function block
 	MpAlarmXHistory_0.Enable := TRUE;
 	MpAlarmXHistory_0.MpLink := ADR(MpLinkSORTING_gAlarmXHistory);
+	
+	// Enabling MpAlarmXAcknowledgeAll function block
+	MpAlarmXAcknowledgeAll_0.Enable := TRUE;
+	MpAlarmXAcknowledgeAll_0.MpLink := ADR(MpLinkSORTING_gAlarmXCore);
 
 END_PROGRAM
 
@@ -26,15 +30,9 @@ PROGRAM _CYCLIC
 	
 	// Automatic module errors - 1000 range
 	IF AutomaticController.Status.Errors.Error1 THEN
-		MpAlarmXSet(MpLinkSORTING_gAlarmXCore, 'Sorting station not homed');
-	ELSE
-		MpAlarmXReset(MpLinkSORTING_gAlarmXCore, 'Sorting station not homed');
-	END_IF
-	
-	IF AutomaticController.Status.Errors.Error2 THEN
-		MpAlarmXSet(MpLinkSORTING_gAlarmXCore, 'Automatic in Error state');
-	ELSE
-		MpAlarmXReset(MpLinkSORTING_gAlarmXCore, 'Automatic in Error state');
+	 	MpAlarmXSet(MpLinkSORTING_gAlarmXCore, 'Sorting station not homed');
+ 	ELSE
+ 		MpAlarmXReset(MpLinkSORTING_gAlarmXCore, 'Sorting station not homed');
 	END_IF
 	
 	// Sorter module errors - 2000 range
@@ -79,13 +77,17 @@ END_PROGRAM
 
 PROGRAM _EXIT
 	
-	// Enabling MpAlarmXCore function block
+	// Disabling MpAlarmXCore function block
 	MpAlarmXCore_0.Enable := FALSE;
 	MpAlarmXCore_0();
 	
-	// Enabling MpAlarmXHistory function block
+	// Disabling MpAlarmXHistory function block
 	MpAlarmXHistory_0.Enable := FALSE;
 	MpAlarmXHistory_0();
+	
+	// Disabling MpAlarmXAcknowledgeAll function block
+	MpAlarmXAcknowledgeAll_0.Enable := FALSE;
+	MpAlarmXAcknowledgeAll_0();
 	 
 END_PROGRAM
 

@@ -13,5 +13,7 @@
     <Object Type="File">ContentAlarms.binding</Object>
     <Object Type="File">ContentAlarms.eventbinding</Object>
     <Object Type="File">ContentMachineStatusPage.binding</Object>
+    <Object Type="File">HomingContent.binding</Object>
+    <Object Type="File">HomingContent.eventbinding</Object>
   </Objects>
 </Package>

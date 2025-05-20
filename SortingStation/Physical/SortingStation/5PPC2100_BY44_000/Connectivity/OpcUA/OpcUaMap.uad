@@ -16,10 +16,8 @@
         <Variable Name="ManualControl" RecursiveEnable="2" />
         <Variable Name="SorterControl" RecursiveEnable="2" />
         <Variable Name="gSorterHardwareIO" RecursiveEnable="2" />
+        <Variable Name="OpcUaControl" RecursiveEnable="2" />
       </GlobalVariables>
-      <Task Name="OpcUaTest">
-        <Variable Name="Test" />
-      </Task>
       <Task Name="HMIHelper">
         <Variable Name="AutomaticMode" />
         <Variable Name="HomingMode" />
@@ -39,6 +37,10 @@
         <Variable Name="RecipeItemLane2" />
         <Variable Name="RecipeItemLane3" />
         <Variable Name="ManualEnable" />
+        <Variable Name="TimeStruct" RecursiveEnable="2" />
+        <Variable Name="SortingStationStatus" />
+        <Variable Name="AutomaticActive" />
+        <Variable Name="SortingHomed" />
       </Task>
       <Task Name="Conveyor">
         <Variable Name="MotionControlState" />
