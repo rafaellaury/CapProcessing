@@ -11,4 +11,6 @@ VAR_CONFIG
 	::IO.DIn.SwivelDriveInConveyorPosition AT %IX."X20DI9371".DigitalInput06;
 	::IO.DIn.ProductAtStartingPosition AT %IX."X67SM2436".StatusInput02;
 	::IO.DIn.ProductAtUnloadingPosition AT %IX."X67SM2436".StatusInput03;
+	::MainContro:Bittest AT %IX."OpcUa_any".SortingComplete;
+	::MainContro:SortingReady AT %IX."OpcUa_any".SortingReady;
 END_VAR

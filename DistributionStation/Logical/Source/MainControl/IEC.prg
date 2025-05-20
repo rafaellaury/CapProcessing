@@ -4,6 +4,6 @@
   <Files>
     <File Description="Local variables" Private="true">Variables.var</File>
     <File Description="Local data types" Private="true">Types.typ</File>
-    <File Description="Cyclic code">Cyclic.ld</File>
+    <File Description="Cyclic code">Automatic.ld</File>
   </Files>
 </Program>

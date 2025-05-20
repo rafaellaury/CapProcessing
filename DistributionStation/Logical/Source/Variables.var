@@ -3,4 +3,11 @@ VAR
 	DistrStn : IO_Control; (*Internal Bits*)
 	MachineControl : MachnineCtrl := (Par:=(Velocity:=600,Acceleration:=3000,Decceleration:=3000));
 	ManualControl : ManualControlType;
+	ConvAxis_Base : MpAxisBasic;
+	ConvAxis_Par : MpAxisBasicParType;
+	Machine : MachineState;
+	DistributionMpAlarmX : MpAlarmXCore;
+	DistributionUIConnectCore : MpAlarmXListUIConnectType;
+	DistributionAlarmXUI : MpAlarmXListUI;
+	Alarms : BOOL;
 END_VAR

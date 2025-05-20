@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="ContentManual_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.EjectCylPush" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.SwivelToConv" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.SwivelToMag" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.EjectionImpulse" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.VacuumOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.ConvFwd" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonForward" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ManualControl.ConvBack" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonForward1" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

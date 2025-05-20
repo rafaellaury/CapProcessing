@@ -1,4 +1,4 @@
 VAR
-	ConvAxis_Base : MpAxisBasic;
-	ConvAxis_Par : MpAxisBasicParType;
+	R_TRIG_0 : R_TRIG;
+	R_TRIG_1 : R_TRIG;
 END_VAR

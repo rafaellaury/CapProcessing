@@ -1,15 +1,3 @@
 VAR
-	DistributionMpAlarmX : MpAlarmXCore;
-	DistributionUIConnectCore : MpAlarmXListUIConnectType;
-	DistributionAlarmXUI : MpAlarmXListUI;
-	BtnA : BOOL;
-	AlarmA : STRING[80];
-	nnn : UDINT;
-	gh : UDINT;
-	btng : BOOL;
-	button : BOOL;
-	ik : UDINT;
-	fgt : BOOL;
-	ghy : DINT;
-	BtnC : BOOL;
+	Timer : ARRAY[0..10] OF TON;
 END_VAR
