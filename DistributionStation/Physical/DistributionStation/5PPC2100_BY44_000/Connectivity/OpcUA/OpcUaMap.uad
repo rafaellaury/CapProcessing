@@ -29,12 +29,56 @@
             <Variable Name="SwivelDriveToConveyor" />
           </Variable>
         </Variable>
+        <Variable Name="ManualControl">
+          <Variable Name="EjectCylPush" />
+          <Variable Name="VacuumOn" />
+          <Variable Name="EjectionImpulse" />
+          <Variable Name="SwivelToConv" />
+          <Variable Name="SwivelToMag" />
+          <Variable Name="ConvFwd" />
+          <Variable Name="ConvBack" />
+        </Variable>
+        <Variable Name="MachineControl">
+          <Variable Name="Mode">
+            <Variable Name="ManualMode" />
+            <Variable Name="AutoMode" />
+          </Variable>
+          <Variable Name="ManualCtrl">
+            <Variable Name="EjectCylPush" />
+            <Variable Name="VacuumOn" />
+            <Variable Name="EjectionImpulse" />
+            <Variable Name="SwivelToConv" />
+            <Variable Name="SwivelToMag" />
+            <Variable Name="ConvFwd" />
+            <Variable Name="ConvBack" />
+          </Variable>
+          <Variable Name="Command">
+            <Variable Name="Start" />
+            <Variable Name="Stop" />
+            <Variable Name="Reset" />
+            <Variable Name="Home" />
+          </Variable>
+          <Variable Name="Alarm" />
+          <Variable Name="Status">
+            <Variable Name="ReadyToRun" />
+            <Variable Name="Running" />
+            <Variable Name="Stopped" />
+            <Variable Name="ErrorStop" />
+            <Variable Name="RecoveryRequired" />
+          </Variable>
+          <Variable Name="MoveSvivle" />
+          <Variable Name="Par">
+            <Variable Name="Velocity" />
+            <Variable Name="Acceleration" />
+            <Variable Name="Decceleration" />
+          </Variable>
+        </Variable>
       </GlobalVariables>
       <Task Name="OpcUaTest" />
-      <Task Name="Alarms">
-        <Variable Name="DistributionAlarmXUI" />
-        <Variable Name="DistributionMpAlarmX" />
-        <Variable Name="DistributionUIConnectCore" />
+      <Task Name="Alarms" />
+      <Task Name="MainContro">
+        <Variable Name="CountedCaps" />
+        <Variable Name="SortingReady" />
       </Task>
     </Module>
   </DefaultView>

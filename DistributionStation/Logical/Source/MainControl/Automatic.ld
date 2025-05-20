@@ -3,34 +3,44 @@ PROGRAM _CYCLIC
 <?AutomationStudio FileVersion="4.9"?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="Check if the machine is ready to run - Hommed , No Alarms, Sorting ready" row="1" column="0" commented="0">
+	<network label="" comment="Check if the machine is ready to run - Hommed , No Alarms, Sorting ready" row="2" column="0" commented="0">
 		<row>
-			<contact type="open" name="Home"/>
-			<contact type="open" name="Alarms"/>
+			<contact type="open" name="SortingReady"/>
+			<line/>
 			<line/>
 			<coil type="open" name="MachineControl.Status.ReadyToRun"/>
 		</row>
+		<row>
+			<contact type="open" name="MachineControl.Override.SortingReadySignal" or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
 	</network>
-	<network label="" comment="Check for current alarms " row="8" column="0" commented="0">
+	<network label="" comment="Start the Mahcine" row="8" column="0" commented="0">
 		<row>
 			<contact type="positive transition" name="MachineControl.Command.Start"/>
+			<line/>
 			<contact type="open" name="MachineControl.Status.ReadyToRun"/>
 			<contact type="closed" name="MachineControl.Status.RecoveryRequired"/>
 			<coil type="set" name="Machine.State1"/>
 		</row>
 		<row>
-			<contact type="positive transition" name="Bittest" or="true"/>
+			<contact type="positive transition" name="Bittest"/>
+			<line or="true"/>
 			<empty or="true"/>
 			<line/>
 			<coil type="set" name="MachineControl.Status.Running"/>
 		</row>
 		<row>
-			<empty/>
+			<contact type="open" name="MachineControl.Override.SortingSendProduct"/>
+			<contact type="positive transition" name="IO.DIn.ProductAtUnloadingPosition" or="true"/>
 			<empty or="true"/>
 			<line/>
 			<coil type="reset" name="MachineControl.Status.Stopped"/>
 		</row>
 		<row>
+			<empty/>
 			<empty/>
 			<empty or="true"/>
 			<line/>
@@ -38,11 +48,13 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<line/>
 			<coil type="reset" name="DistrStn.DOut.VacuumOn"/>
 		</row>
 		<row>
+			<empty/>
 			<empty/>
 			<empty or="true"/>
 			<line/>
@@ -50,18 +62,20 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<line/>
 			<coil type="reset" name="DistrStn.DOut.SwivelDriveToMagazine"/>
 		</row>
 		<row>
 			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<line/>
 			<coil type="reset" name="DistrStn.DOut.SwivelDriveToConveyor"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Stop the machine" row="2" column="0" commented="0">
 		<row>
 			<contact type="positive transition" name="MachineControl.Command.Stop"/>
 			<line/>
@@ -354,7 +368,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="DistrStn.DOut.EjectionImpulseOn"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Turn the recovery for state 1 if machine stopped" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="Machine.State1"/>
 			<contact type="positive transition" name="MachineControl.Status.Stopped"/>
@@ -368,7 +382,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="DistrStn.DOut.SwivelDriveToConveyor"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Turn the recovery for state 2 if machine stopped" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="Machine.State2"/>
 			<contact type="positive transition" name="MachineControl.Status.Stopped"/>
@@ -388,7 +402,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="DistrStn.DOut.SwivelDriveToMagazine"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Turn the recovery required status when it is required" row="3" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -409,8 +423,37 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
+	<network label="" comment="" row="4" column="0" commented="0">
+		<row>
+			<empty/>
+			<functionblock position="header" name="Counter" type="CTU"/>
+			<empty/>
+		</row>
+		<row>
+			<contact type="positive transition" name="Machine.State1"/>
+			<functionblock position="top" type="CTU"><input name="CU"/><output name="Q"/></functionblock>
+			<empty/>
+		</row>
+		<row>
+			<contact type="positive transition" name="MachineControl.Command.Reset"/>
+			<functionblock position="middle" type="CTU"><input name="RESET"/><output name="CV"/></functionblock>
+			<analog type="output" name="CountedCaps"/>
+		</row>
+		<row>
+			<analog type="input" name="500"/>
+			<functionblock position="bottom" type="CTU"><input name="PV"/></functionblock>
+			<empty/>
+		</row>
+	</network>
 </networks>
 END_PROGRAM
+
+
+
+
+
+
+
 
 
 

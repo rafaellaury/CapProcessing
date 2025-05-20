@@ -1,10 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentMain" height="700" width="1120" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Label" id="Label1" top="140" left="680" width="200" zIndex="0" text="Svivle to Conv O/P" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.Label" id="Label2" top="180" left="680" width="160" zIndex="1" text="Eject Cylinder" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.Label" id="Label3" top="220" left="680" width="220" zIndex="2" text="Svivle To Magazine" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.Label" id="Label4" top="260" left="680" width="180" zIndex="3" text="VacuumON" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.Label" id="Label5" top="300" left="680" width="140" zIndex="4" text="EjectionPulse" textColor="rgba(0, 0, 0, 1)" fontName="Arial Unicode" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxOpMode" top="20" left="20" width="620" height="240" zIndex="0" text="Operation Mode">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ButtonBar" id="ButtonBarOperatingMode" top="4" left="20" width="440" height="80" zIndex="0">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonManualMode" top="20" left="20" width="120" height="40" zIndex="0" text="Manual" checkedTextColor="rgba(255, 255, 255, 1)" checkedImageColor="rgba(255, 255, 255, 1)" style="Operate" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonHomingMode" top="20" left="160" width="120" height="40" zIndex="1" text="Homing" checkedTextColor="rgba(255, 255, 255, 1)" style="Operate" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonAutoMode" top="20" left="300" width="120" height="40" zIndex="2" text="Automatic" wordWrap="true" checkedTextColor="rgba(255, 255, 255, 1)" style="Operate" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.Label" id="LabelActiveMode" top="104" left="20" width="440" zIndex="1" text="Active Mode:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputActiveMode" top="104" left="320" width="220" zIndex="2" textColor="rgba(128, 128, 128, 1)" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonStart" top="24" left="480" width="120" height="40" zIndex="3" text="Start" style="Command" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonStop" top="84" left="480" width="120" height="40" zIndex="4" text="Stop" style="Command" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonReset" top="144" left="480" width="120" height="40" zIndex="5" text="Reset" style="Command" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelActiveMode1" top="144" left="160" width="300" zIndex="6" text="Time in Automatic:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput1" top="144" left="300" width="160" zIndex="7" unit="{'metric':'SEC','imperial':'SEC','imperial-us':'SEC'}" unitAlign="right" textColor="rgba(128, 128, 128, 1)" unitFontSize="16px" visible="false" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxCount" top="280" left="700" width="400" height="120" zIndex="1" text="Product Count">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Label" id="LabellTotalCount" top="24" left="100" width="230" zIndex="0" text="Total Count:" backColor="rgba(220, 220, 220, 1)" textColor="rgba(128, 128, 128, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputCountTotal" top="24" left="220" zIndex="1" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" textColor="rgba(128, 128, 128, 1)" />
+      </Widgets>
+    </Widget>
   </Widgets>
 </Content>

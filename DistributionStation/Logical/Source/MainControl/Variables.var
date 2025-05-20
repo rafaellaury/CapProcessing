@@ -1,10 +1,9 @@
 VAR
-	Machine : MachineState;
 	Timer : TON;
-	OnTime : TIME := T#1.5s;
+	OnTime : TIME := T#2.0s;
 	Timer3 : TON;
 	Timer2 : TON;
-	DleayTime : TIME := T#1.5s;
+	DleayTime : TIME := T#1.0s;
 	TON_0 : TON;
 	ONS : Trigger;
 	TimeeLatch : BOOL;
@@ -13,8 +12,11 @@ VAR
 	MoveTime : TIME := T#0.8s;
 	Timer1 : TON;
 	Home : BOOL;
-	Alarms : BOOL;
 	Bittest : BOOL;
 	RecoveryState : MachineState;
 	R_TRIG_11 : R_TRIG;
+	Counter : CTU;
+	CountedCaps : UINT;
+	SortingReady : BOOL; (*Ready Signal from Sorting*)
+	Override : BOOL;
 END_VAR

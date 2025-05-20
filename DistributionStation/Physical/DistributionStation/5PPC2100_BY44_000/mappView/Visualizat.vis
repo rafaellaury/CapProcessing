@@ -11,6 +11,7 @@
   <BindingsSets>
     <BindingsSet refId="ContentMain_binding" />
     <BindingsSet refId="ContentAlarms_binding" />
+    <BindingsSet refId="ContentManual_binding" />
   </BindingsSets>
   <EventBindingsSets />
   <Dialogs />

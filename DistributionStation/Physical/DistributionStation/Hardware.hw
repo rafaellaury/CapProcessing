@@ -11,9 +11,7 @@
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
       <Parameter ID="ActivateDevice" Value="1" />
       <Parameter ID="HostName" Value="distribution-station-ppc2100" />
-      <Parameter ID="Mode" Value="Manual" />
-      <Parameter ID="InternetAddress" Value="192.168.10.11" />
-      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Parameter ID="InaNodeNumber" Value="4" />
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
     <Connector Name="IF4">
@@ -39,6 +37,18 @@
     <Parameter ID="ActivateOpcUa" Value="1" />
     <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
     <Parameter ID="ActivateHypervisor" Value="1" Description="Enabling B&amp;R Hypervisor" />
+  </Module>
+  <Module Name="OpcUa_any" Type="OpcUa_any" Version="1.0.0.1">
+    <Connection Connector="ETH1" TargetModule="5PPC2100_BY44_000" TargetConnector="IF3">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Parameter ID="ServerEndpointUrl" Value="opc.tcp://10.67.22.9:4840" />
+    <Group ID="Channel1" />
+    <Parameter ID="ChannelID1" Value="SortingComplete" />
+    <Parameter ID="ChannelBrowsePath1" Value="/0:Root/0:Objects/4:PLC/6:Modules/6:&amp;:&amp;:/6:Global PV/6:SorterControl/6:Status/6:SorterState/6:SortingProductDone" Description="Variable signaling that Sorting is complete" />
+    <Group ID="Channel2" />
+    <Parameter ID="ChannelID2" Value="SortingReady" />
+    <Parameter ID="ChannelBrowsePath2" Value="/0:Root/0:Objects/4:PLC/6:Modules/6:&amp;:&amp;:/6:Global PV/6:AutomaticController/6:Status/6:SortingReady" Description="Variable signaling Sorting is ready (no errors)" />
   </Module>
   <Module Name="X20BB80" Type="X20BB80" Version="1.1.0.0" />
   <Module Name="X20BC0083" Type="X20BC0083" Version="2.14.0.0">

@@ -34,22 +34,27 @@ TYPE
 		Status : StatusType;
 		MoveSvivle : BOOL;
 		Par : ParameterType;
+		Override : OverrideType;
+		ResetConv : BOOL;
 	END_STRUCT;
 	MachineModeType : 	STRUCT 
 		ManualMode : BOOL;
 		AutoMode : BOOL;
 	END_STRUCT;
 	ManualControlType : 	STRUCT 
-		EjectCylPush : BOOL;
-		VacuumOn : BOOL;
-		EjectionImpulse : BOOL;
-		SwivelToConv : BOOL;
-		SwivelToMag : BOOL;
+		EjectCylPush : BOOL; (*Cylinder In Extended Position*)
+		VacuumOn : BOOL; (*Vaccuum ON*)
+		EjectionImpulse : BOOL; (*Ejection Valve*)
+		SwivelToConv : BOOL; (*Move Svivle to Conveyor*)
+		SwivelToMag : BOOL; (*Move Svivle To Magazine*)
+		ConvFwd : BOOL; (*Move Convyor Forward*)
+		ConvBack : BOOL; (*Move Convyor Backward*)
 	END_STRUCT;
 	CommandType : 	STRUCT 
 		Start : BOOL;
 		Stop : BOOL;
 		Reset : BOOL;
+		Home : BOOL;
 	END_STRUCT;
 	StatusType : 	STRUCT 
 		ReadyToRun : BOOL; (*Hommed And No Alarms*)
@@ -57,5 +62,24 @@ TYPE
 		Stopped : BOOL; (*Stop Push Button*)
 		ErrorStop : BOOL; (* Stopped For An Acive Error*)
 		RecoveryRequired : BOOL; (*Recover From Stop*)
+	END_STRUCT;
+	OverrideType : 	STRUCT 
+		SortingReadySignal : BOOL;
+		SortingSendProduct : BOOL;
+	END_STRUCT;
+	MachineState : 	STRUCT 
+		State1 : BOOL; (*Svivle Homming*)
+		State2 : BOOL; (*Dispense product and pickup*)
+		State3 : BOOL; (*Dropping product at the conv*)
+		State4 : BOOL; (*Product Ejection*)
+		State5 : BOOL; (*Move Svivle to safe position*)
+		State6 : BOOL;
+		State7 : BOOL;
+		State8 : BOOL;
+		State9 : BOOL;
+		State10 : BOOL;
+		State11 : BOOL;
+		State12 : BOOL;
+		State13 : BOOL;
 	END_STRUCT;
 END_TYPE

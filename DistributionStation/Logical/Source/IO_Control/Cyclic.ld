@@ -11,8 +11,8 @@ PROGRAM _CYCLIC
 			<coil type="open" name="IO.DOut.EjectingCylinderPushOutProduct"/>
 		</row>
 		<row>
-			<contact type="open" name="ManualControl.EjectCylPush" or="true"/>
-			<empty/>
+			<contact type="open" name="ManualControl.EjectCylPush"/>
+			<contact type="open" name="MachineControl.Mode.ManualMode" or="true"/>
 			<empty/>
 			<empty/>
 		</row>
@@ -25,8 +25,8 @@ PROGRAM _CYCLIC
 			<coil type="open" name="IO.DOut.VacuumOn"/>
 		</row>
 		<row>
-			<contact type="open" name="ManualControl.VacuumOn" or="true"/>
-			<empty/>
+			<contact type="open" name="ManualControl.VacuumOn"/>
+			<contact type="open" name="MachineControl.Mode.ManualMode" or="true"/>
 			<empty/>
 			<empty/>
 		</row>
@@ -39,8 +39,8 @@ PROGRAM _CYCLIC
 			<coil type="open" name="IO.DOut.EjectionImpulseOn"/>
 		</row>
 		<row>
-			<contact type="open" name="ManualControl.EjectionImpulse" or="true"/>
-			<empty/>
+			<contact type="open" name="ManualControl.EjectionImpulse"/>
+			<contact type="open" name="MachineControl.Mode.ManualMode" or="true"/>
 			<empty/>
 			<empty/>
 		</row>
@@ -53,14 +53,14 @@ PROGRAM _CYCLIC
 			<coil type="open" name="IO.DOut.SwivelDriveToMagazine"/>
 		</row>
 		<row>
-			<contact type="open" name="MachineControl.MoveSvivle" or="true"/>
-			<empty/>
+			<contact type="open" name="MachineControl.MoveSvivle"/>
+			<line or="true"/>
 			<empty/>
 			<empty/>
 		</row>
 		<row>
-			<contact type="open" name="ManualControl.SwivelToMag" or="true"/>
-			<empty/>
+			<contact type="open" name="ManualControl.SwivelToMag"/>
+			<contact type="open" name="MachineControl.Mode.ManualMode" or="true"/>
 			<empty/>
 			<empty/>
 		</row>
@@ -73,8 +73,8 @@ PROGRAM _CYCLIC
 			<coil type="open" name="IO.DOut.SwivelDriveToConveyor"/>
 		</row>
 		<row>
-			<contact type="open" name="ManualControl.SwivelToConv" or="true"/>
-			<empty/>
+			<contact type="open" name="ManualControl.SwivelToConv"/>
+			<contact type="open" name="MachineControl.Mode.ManualMode" or="true"/>
 			<empty/>
 			<empty/>
 		</row>
@@ -145,6 +145,9 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
+
+
 
 
 

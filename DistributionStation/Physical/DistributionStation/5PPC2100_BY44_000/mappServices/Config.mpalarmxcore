@@ -4,10 +4,30 @@
   <Element ID="DistributionAlarmXCore" Type="mpalarmxcore">
     <Group ID="mapp.AlarmX.Core.Configuration">
       <Group ID="[0]">
-        <Property ID="Name" Value="AlarmA" />
-        <Property ID="Message" Value="test Alarm" />
+        <Property ID="Name" Value="Suction Cup Alarm" />
+        <Property ID="Message" Value="Suction Cup In Magazine Position, Cannot  Pick Up Product" />
         <Property ID="Code" Value="101" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="Conveyor Sensor Alarm" />
+        <Property ID="Message" Value="Product Sensor At Either End Of The Conveyor Is Disconnected" />
+        <Property ID="Code" Value="2" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="Conv Faulted" />
+        <Property ID="Message" Value="Conveyor Stepper Motor Faulted" />
+        <Property ID="Code" Value="3" />
         <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="State1 Alarm" />
+        <Property ID="Message" Value="Svivle Taking Too Long to Home" />
+        <Property ID="Code" Value="4" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="State3 Alarm" />
+        <Property ID="Message" Value="Product Picked However Not Placed" />
+        <Property ID="Code" Value="5" />
       </Group>
     </Group>
   </Element>
