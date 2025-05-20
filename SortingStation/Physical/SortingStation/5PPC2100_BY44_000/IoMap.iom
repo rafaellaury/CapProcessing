@@ -19,4 +19,6 @@ VAR_CONFIG
 	::AlarmHandl:CommsErrors.X2X.X20DO9322_ModuleOk AT %IX."X20DO9322".ModuleOk;
 	::AlarmHandl:CommsErrors.X2X.X20BT9100_ModuleOk AT %IX."X20BT9100".ModuleOk;
 	::AlarmHandl:CommsErrors.X2X.X67SM2436_ModuleOk AT %IX."X67SM2436".ModuleOk;
+	::OpcUaControl.Read.ProductArriving AT %IX."OpcUa_any".ProductAtUnloadingPosition; (*Signal that product is arriving from the distribution station*)
+	::OpcUaControl.Read.DistributionReady AT %IX."OpcUa_any".DistributionReady; (*Signal that distribution is without errors and ready to go*)
 END_VAR

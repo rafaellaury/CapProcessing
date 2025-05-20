@@ -3,22 +3,22 @@ PROGRAM _CYCLIC
 <?AutomationStudio FileVersion="4.9"?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Action to read all Digital Inputs at the beginning of the Task" row="1" column="0" commented="0">
 		<row>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="ReadDIAction"/></actionblock>
 			<empty/>
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="If both Switches are Retracted and the Stopper is extended, the status is considered homed." row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.Switch1Retracted"/>
 			<contact type="open" name="SorterControl.Status.Switch2Retracted"/>
-			<line/>
+			<contact type="closed" name="SorterControl.Cmd.RetractStopper"/>
 			<coil type="set" name="SorterControl.Status.IsHomed"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="In the opposite case, the Sorter is considered Not homed" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.Switch1Extended"/>
 			<line/>
@@ -38,7 +38,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="If the Home command is received, reset all commands. Internal home is a separate command called from Sorter to not interfere with external calls" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Cmd.Home"/>
 			<contact type="closed" name="SorterControl.Status.IsHomed"/>
@@ -76,7 +76,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Cmd.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="11" column="0" commented="0">
+	<network label="" comment="If Reset command is called, call InternalHome and move the ProductType to ptUNKNOWN. Reset all Lane booleans and Errors." row="11" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Cmd.Reset"/>
 			<line/>
@@ -153,7 +153,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Status.SorterState.Error"/>
 		</row>
 	</network>
-	<network label="" comment="" row="10" column="0" commented="0">
+	<network label="" comment="INIT STATE - Home the Sorter if not done already, and initialize all variables" row="10" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.Init"/>
 			<contact type="closed" name="SorterControl.Status.IsHomed"/>
@@ -216,12 +216,12 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<analog type="input" name="0"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40" ENO="true"/></function>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="SorterControl.Status.DestLane"/>
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Once finished, set InitDone to true" row="1" column="0" commented="0">
 		<row>
 			<contact type="closed" name="SorterControl.Status.SorterState.Init"/>
 			<line/>
@@ -229,7 +229,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Status.SorterState.InitDone"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="WAITING STATE - once ProductAvailable is true, a Product is ready to be classified. If LaneFull command is seen here, there is an error." row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.Waiting"/>
 			<contact type="open" name="SorterControl.Status.ProductAvailable"/>
@@ -249,7 +249,7 @@ PROGRAM _CYCLIC
 			<coil type="set" name="SorterControl.Status.SorterState.Error"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Once Waiting is done, set WaitingDone to true" row="1" column="0" commented="0">
 		<row>
 			<contact type="closed" name="SorterControl.Status.SorterState.Waiting"/>
 			<line/>
@@ -257,7 +257,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Status.SorterState.WaitingDone"/>
 		</row>
 	</network>
-	<network label="" comment="Setting the product type based on enumerator values:
+	<network label="" comment="CLASSIFYING STATE - Setting the product type based on enumerator values:
 1: UNKNOWN
 2 : RED
 3: BLACK
@@ -331,7 +331,7 @@ PROGRAM _CYCLIC
 			<analog type="output" name="SorterControl.Status.ProductType"/>
 		</row>
 	</network>
-	<network label="" comment="" row="9" column="0" commented="0">
+	<network label="" comment="Step two of classifying: once the product type is known, check the destination lane for that type of material and set the destination accordingly" row="9" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.Classifying"/>
 			<contact type="open" name="CheckLanes"/>
@@ -417,7 +417,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Once Classifying is done, set ClassifyingDone to true" row="1" column="0" commented="0">
 		<row>
 			<contact type="closed" name="SorterControl.Status.SorterState.Classifying"/>
 			<line/>
@@ -425,7 +425,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Status.SorterState.ClassifyingDone"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="SORTING_PRODUCT STATE - Depending on which lane the cap must go to, extend the correct switch, or none of them (Lane 1 = Switch 1, Lane 2 = Switch 2, Lane 3 = no switch" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.SortingProduct"/>
 			<contact type="open" name="Lane1"/>
@@ -439,7 +439,7 @@ PROGRAM _CYCLIC
 			<coil type="set" name="SorterControl.Cmd.ExtendSwitch2"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="If the sorter is ready to go, retract the stopper" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.SortingProduct"/>
 			<contact type="open" name="SorterControl.Status.Switch1Extended"/>
@@ -459,7 +459,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Wait one second after the stopper has been retracted, and then extend it again. If Lane 1, retract the switch so that the cap can fit into the lane." row="3" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -485,7 +485,9 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="SorterControl.Cmd.ExtendSwitch1"/>
 		</row>
 	</network>
-	<network label="" comment="" row="7" column="0" commented="0">
+	<network label="" comment="Once the LaneFull sensor has been seen, the Sorting is complete, and the ProductDone state is set to true.
+If more than five seconds pass by and it has not gone past the sensor, trigger Error 1, product is lost or stuck.
+If three seconds have gone by and there is still a product behind the stopper, trigger Error 2." row="7" column="0" commented="0">
 		<row>
 			<contact type="open" name="SorterControl.Status.SorterState.SortingProduct"/>
 			<contact type="open" name="SorterControl.Status.LaneFull"/>
@@ -544,20 +546,22 @@ PROGRAM _CYCLIC
 			<coil type="set" name="SorterControl.Status.Errors.Error2"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Update the product count once the Sorting is complete" row="2" column="0" commented="0">
 		<row>
 			<contact type="closed" name="SorterControl.Status.SorterState.SortingProduct"/>
+			<line/>
 			<line/>
 			<line/>
 			<coil type="reset" name="SorterControl.Status.SorterState.SortingProductDone"/>
 		</row>
 		<row>
 			<empty or="true"/>
+			<contact type="negative transition" name="SorterControl.Status.SorterState.SortingProductDone"/>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="CountProducts"/></actionblock>
 			<empty/>
 		</row>
 	</network>
-	<network label="ane" comment="" row="11" column="0" commented="0">
+	<network label="ane" comment="Logic for MANUAL MODE - same as for Automatic mode, but with different triggers. If the product has been classified, then reset the lane variables." row="11" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -682,7 +686,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="Lane3"/>
 		</row>
 	</network>
-	<network label="" comment="" row="9" column="0" commented="0">
+	<network label="" comment="Check the lanes and assign the appropriate destination lane." row="9" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.ManualMode"/>
 			<contact type="open" name="CheckLanes"/>
@@ -768,7 +772,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="If in Automatic Mode or in Homing Mode, write out to the DOs." row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="gOperatingMode.AutoMode"/>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="WriteDOAction"/></actionblock>
@@ -783,6 +787,9 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
+
+
 
 
 

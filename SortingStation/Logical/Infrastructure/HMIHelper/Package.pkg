@@ -2,8 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File" Description="Interface type for HMI helper" Private="true">HMIHelpIF.typ</Object>
-    <Object Type="File" Description="Interface variables for HMI helper" Private="true">HMIHelpIF.var</Object>
+    <Object Type="File" Description="Interface variables for HMI helper">HMIHelpIF.var</Object>
     <Object Type="Program" Language="IEC" Description="HMI helper task">HMIHelper</Object>
   </Objects>
 </Package>

@@ -1,0 +1,4 @@
+(*global interface variables*)
+VAR
+	OpcUaControl : OpcUaControlType; (*Control structure for OPCUA*)
+END_VAR

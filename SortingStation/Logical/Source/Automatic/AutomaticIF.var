@@ -1,4 +1,5 @@
 (*global interface variables*)
 VAR
 	AutomaticController : AutomaticControlType; (*Control structure for Automatic*)
+	AutomaticGeneralInfo : AutomaticGeneralInfoType; (*General info that is retained*)
 END_VAR

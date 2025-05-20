@@ -3,6 +3,7 @@
 <Package SubType="DialogsPackage" PackageType="DialogsPackage" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="Package" Description="AreaContents">AreaContents</Object>
-    <Object Type="Package" Description="Homing dialog">Dialog</Object>
+    <Object Type="Package" Description="Homing dialog">HomingDialog</Object>
+    <Object Type="Package" Description="Recipe new">RecipeDialog</Object>
   </Objects>
 </Package>

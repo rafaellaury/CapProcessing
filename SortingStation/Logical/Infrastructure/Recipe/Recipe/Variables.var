@@ -3,7 +3,7 @@ VAR
 	SaveRecipe : BOOL := FALSE; (*Command to save recipes*)
 	RecipeCreateStep : RecipeCreateSteps := IDLE; (*Internal variable for recipe creating state machine*)
 	MpRecipeUIConnect : MpRecipeUIConnectType := (Recipe:=(Filter:='*xml'),New:=(FileName:='newRecipe.xml')); (*MpRecipeUI connection datapoints*)
-	RecipeList : ARRAY[0..19] OF STRING[100] := ['{"value":"Default Recipe","text":"Default Recipe"}',19('')]; (*List box data provider*)
+	RecipeList : ARRAY[0..19] OF STRING[100] := ['{"value":"RBM.xml","text":"RBM.xml"}','{"value":"RMB.xml","text":"RMB.xml"}','{"value":"BRM.xml","text":"BRM.xml"}','{"value":"BMR.xml","text":"BMR.xml"}','{"value":"MRB.xml","text":"MRB.xml"}','{"value":"MBR.xml","text":"MBR.xml"}',14('')]; (*List box data provider*)
 	selectedValue : STRING[100]; (*Selected value from list box*)
 END_VAR
 (*local function blocks*)
@@ -15,5 +15,10 @@ VAR
 END_VAR
 (*local constants*)
 VAR
-	DEFAULT_RECIPE_FILENAME : STRING[100] := 'DefaultRecipe.xml';
+	RECIPE_6_FILENAME : STRING[100] := 'MBR.xml'; (*Metal Black Red recipe file name*)
+	RECIPE_5_FILENAME : STRING[100] := 'MRB.xml'; (*Metal Red Black recipe file name*)
+	RECIPE_4_FILENAME : STRING[100] := 'BMR.xml'; (*Black Metal Red recipe file name*)
+	RECIPE_3_FILENAME : STRING[100] := 'BRM.xml'; (*Black Red Metal recipe file name*)
+	RECIPE_2_FILENAME : STRING[100] := 'RMB.xml'; (*Red Metal Black recipe file name*)
+	RECIPE_1_FILENAME : STRING[100] := 'RBM.xml'; (*Red Black Metal recipe file name*)
 END_VAR

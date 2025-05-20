@@ -30,6 +30,10 @@ PROGRAM _CYCLIC
 	CreateRecipes;
 	// Load default recipe into PV
 	MpRecipeUIConnect.Recipe.Load;
+	IF MpRecipeUIConnect.Recipe.Load THEN
+		NewRecipeLoaded := TRUE;
+	END_IF
+	
 	// Cyclically call all function blocks
 	MpRecipeXml_0();
 	MpRecipeRegPar_0();

@@ -46,9 +46,6 @@ TYPE
 		IsHomed : BOOL; (*True if all pneumatic valves in home position*)
 		ProcessDone : BOOL; (*Process done bit*)
 		SorterState : SorterStates; (*State machine local*)
-		ProductCountRed : UINT; (*Product counter for red products*)
-		ProductCountBlack : UINT; (*Product counter for black products*)
-		ProductCountMetal : UINT; (*Product counter for metal products*)
 		Errors : SorterErrors; (*Errors structure*)
 		DestLane : UINT := 0; (*Destination lane, 1 2 or 3*)
 	END_STRUCT;
@@ -56,6 +53,11 @@ TYPE
 		Cmd : SorterCommandType; (*Command structure for sorter*)
 		Par : SorterParameterType; (*Parameter structure for sorter*)
 		Status : SorterStatusType; (*Status structure with feedback from sorter*)
+	END_STRUCT;
+	ProductCounterType : 	STRUCT  (*Product counter type*)
+		ProductCountRed : UINT; (*Product counter for red products*)
+		ProductCountBlack : UINT; (*Product counter for black products*)
+		ProductCountMetal : UINT; (*Product counter for metal products*)
 	END_STRUCT;
 END_TYPE
 

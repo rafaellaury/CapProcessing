@@ -8,7 +8,6 @@
     <Object Type="Package" Description="Package for source code">Source</Object>
     <Object Type="Package" Description="Package for infrastructure code">Infrastructure</Object>
     <Object Type="Package" Description="Package containing project documentation">Documentation</Object>
-    <Object Type="Program" Language="IEC">OpcUaTest</Object>
     <Object Type="Package" Description="Mapp View HMI implementation">mappView</Object>
   </Objects>
 </Package>

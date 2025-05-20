@@ -26,7 +26,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="If the Jog forward command received, run the command on the function block if it is powered on and homed" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.JogForward"/>
 			<contact type="closed" name="MpAxisBasic_0.Error"/>
@@ -35,7 +35,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="MpAxisBasic_0.JogPositive"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="If the Jog backward command received, run the command on the function block if it is powered on and homed" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.JogBackward"/>
 			<contact type="closed" name="MpAxisBasic_0.Error"/>
@@ -44,7 +44,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="MpAxisBasic_0.JogNegative"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="If the Start command is received, activate the MoveVelocity command if it is powered on and homed" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.Start"/>
 			<contact type="closed" name="MpAxisBasic_0.Error"/>
@@ -53,7 +53,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="MpAxisBasic_0.MoveVelocity"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="If the Stop command is received, stop the axis slowly, and then power it off." row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.Stop"/>
 			<contact type="closed" name="MpAxisBasic_0.Error"/>
@@ -68,7 +68,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty/>
-			<empty/>
+			<empty or="true"/>
 			<empty or="true"/>
 			<coil type="reset" name="MpAxisBasic_0.MoveVelocity"/>
 		</row>
@@ -77,7 +77,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty/>
-			<empty/>
+			<empty or="true"/>
 			<empty or="true"/>
 			<coil type="reset" name="MpAxisBasic_0.JogPositive"/>
 		</row>
@@ -86,7 +86,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty/>
-			<empty/>
+			<empty or="true"/>
 			<empty or="true"/>
 			<coil type="reset" name="MpAxisBasic_0.JogNegative"/>
 		</row>
@@ -95,12 +95,21 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty/>
-			<empty/>
+			<empty or="true"/>
 			<empty or="true"/>
 			<coil type="reset" name="ConveyorController.Cmd.Start"/>
 		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<contact type="open" name="MpAxisBasic_0.Stopped"/>
+			<coil type="reset" name="MpAxisBasic_0.Power"/>
+		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="If the home command is received, home the axis" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.Home"/>
 			<contact type="closed" name="MpAxisBasic_0.IsHomed"/>
@@ -108,7 +117,7 @@ PROGRAM _CYCLIC
 			<coil type="open" name="MpAxisBasic_0.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="If the reset command is received, reset all the bits" row="5" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorController.Cmd.Reset"/>
 			<line/>
@@ -140,7 +149,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="ConveyorController.Cmd.JogBackward"/>
 		</row>
 	</network>
-	<network label="" comment="" row="20" column="0" commented="0">
+	<network label="" comment="Instance of MpAxisBasic function block" row="20" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -264,6 +273,8 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
+
 
 
 

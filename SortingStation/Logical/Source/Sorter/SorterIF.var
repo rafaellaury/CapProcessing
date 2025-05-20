@@ -1,4 +1,5 @@
 (*global sorter interface variables*)
 VAR
 	SorterControl : SorterType; (*Control structure for the Sorter*)
+	ProductCounter : ProductCounterType; (*Counters for all three product types*)
 END_VAR

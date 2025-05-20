@@ -7,6 +7,14 @@
         <Property ID="Name" Value="Sorting station not homed" />
         <Property ID="Message" Value="Cannot start automtic mode, the machine needs to be homed first." />
         <Property ID="Code" Value="1001" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::AlarmHandl:CommsErrors.X2X.X20BC0083_ModuleOk" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="FALSE" />
+            </Group>
+          </Group>
+        </Selector>
       </Group>
       <Group ID="[1]">
         <Property ID="Name" Value="Automatic in Error state" />
